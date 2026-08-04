@@ -1,0 +1,38 @@
+@use '../../app/_scss/variables' as *;
+
+section#whisky {
+    background: linear-gradient(60deg, $black 0%, $darkest 40%, $darker 50%, $darkest 60%, $black 100%);
+    position: relative;
+    display: block;
+    height: 100vh;
+
+    article {
+        display: block;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        width: 80vw;
+        height: 80vh;
+        position: absolute;
+        top: 2vh;
+        left: 2vw;
+
+        p {
+            max-width: 65vw;
+        }
+    }
+    .scotland {
+        position: absolute;
+        bottom: 0;
+        right: 10vw;
+
+        path,
+        g {
+            transition: fill 200ms ease;
+
+            &.active {
+                fill: #6c6eec;
+            }
+        }
+    }
+}

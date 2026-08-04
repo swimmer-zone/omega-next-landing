@@ -1,0 +1,21 @@
+@use '../../app/_scss/variables' as *;
+
+.swiper {
+	width: 100%;
+	margin: 40px 0;
+	height: 440px;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		display: block;
+		width: auto;
+		height: 400px;
+		object-fit: cover;
+	}
+}

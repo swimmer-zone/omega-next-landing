@@ -1,0 +1,149 @@
+@use '../../app/_scss/variables' as *;
+
+li:has(.playing) {
+    background-color: $darkest;
+    border: 1px solid $darker;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.rhap_container {
+    width: 480px;
+    padding: 1rem 1.25rem;
+    background: #11111188;
+    color: $purple;
+    box-shadow: none;
+    border: 1px solid $darkest;
+    border-radius: 0;
+    font-family: inherit;
+    outline: none !important;
+
+    .rhap_main {
+        width: 100%;
+
+        .rhap_progress-section {
+            margin-bottom: 0.75rem;
+
+            .rhap_time {
+                color: #888;
+                font-size: 0.75rem;
+                font-variant-numeric: tabular-nums;
+            }
+            .rhap_progress-container {
+                height: 1rem;
+                margin-inline: 0;
+
+                .rhap_progress-bar {
+                    height: 2px;
+                    border-radius: 0;
+                    background: $dark;
+
+                    .rhap_progress-filled {
+                        background: #fff;
+                        border-radius: 0;
+                    }
+                    .rhap_progress-bar-show-download {
+                        background: $dark;
+                    }
+                    .rhap_download-progress {
+                        background: $dark;
+                    }
+                    .rhap_progress-indicator {
+                        width: 16px;
+                        height: 16px;
+                        background: $purple;
+                        border-radius: 50%;
+                        box-shadow: none;
+                    }
+                }
+            }
+            .rhap_current-time,
+            .rhap_total-time {
+                display: none;
+            }
+        }
+        .rhap_controls-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            .rhap_main-controls {
+                display: flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+            .rhap_button-clear {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 2rem;
+                height: 2rem;
+                padding: 0;
+                //color: #aaa;
+            }
+            .rhap_button-clear:hover {
+                color: $purple;
+            }
+            .rhap_button-clear:focus-visible {
+                outline: 1px solid #fff;
+                outline-offset: 3px;
+            }
+            .rhap_rewind-button,
+            .rhap_rewind-button svg,
+            .rhap_skip-button,
+            .rhap_skip-button svg,
+            .rhap_forward-button,
+            .rhap_forward-button svg,
+            .rhap_play-pause-button,
+            .rhap_play-pause-button svg,
+            .rhap_volume-button {
+                width: 1rem;
+                height: 1rem;
+                outline: none !important;
+
+                &:focus-visible svg path {
+                  fill: $purple;
+                }
+            }
+            .rhap_play-pause-button,
+            .rhap_play-pause-button svg {
+                width: 2rem;
+                height: 2rem;
+            }
+            .rhap_volume-controls {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            .rhap_volume-bar-area {
+                width: 5rem;
+            }
+            .rhap_volume-bar {
+                height: 2px;
+                background: $dark;
+            }
+            .rhap_volume-indicator {
+                width: 16px;
+                height: 16px;
+                background: $purple;
+                margin-top: -2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .rhap_container {
+        padding: 0.75rem;
+    }
+    .rhap_controls-section {
+        gap: 0.5rem;
+    }
+    .rhap_volume-controls {
+        display: none;
+    }
+    .rhap_progress-section {
+        gap: 0.5rem;
+    }
+}

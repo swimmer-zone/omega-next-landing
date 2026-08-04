@@ -1,0 +1,24 @@
+<svg viewBox="0 0 404 251" xmlns="http://www.w3.org/2000/svg" style="background-color:rgb(0,39,68);">
+    <g id="text">
+        <g transform="matrix(1,0,0,0.999996,0,0.000706939)">
+            <text x="10.477px" y="187.852px" style="font-family:'Cambria', serif;font-size:32px;fill:white;">SINDS</text>
+        </g>
+        <g transform="matrix(1,0,0,0.999996,0,0.00070391)">
+            <text x="326.259px" y="187.047px" style="font-family:'Cambria', serif;font-size:32px;fill:white;">2014</text>
+        </g>
+    </g>
+    <g id="bars">
+        <path d="M196.562,115.841L246.468,148.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,126.841L246.468,159.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,137.841L246.468,170.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,148.841L246.468,181.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,159.841L246.468,192.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,170.841L246.468,203.028" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,181.841L228.986,202.753" style="stroke:white;stroke-width:2px;"/>
+        <path d="M196.562,192.841L211.427,202.428" style="stroke:white;stroke-width:2px;"/>
+    </g>
+    <g id="house">
+        <path d="M196.725,202.534C197.05,202.372 246.793,202.534 246.793,202.534" style="stroke:rgb(186,156,122);stroke-width:4px;"/>
+        <path d="M111.963,232.815L111.394,118.911L196.496,62.481L196.517,20.753L310.329,101.698L310.654,232.721L196.7,232.721L196.496,62.481L280.255,118.442L280.255,202.485L246.443,202.485L246.443,137.461L195.481,104.636L146.144,137.299L146.144,232.884L111.963,232.815Z" style="fill:none;fill-rule:nonzero;stroke:rgb(186,156,122);stroke-width:4px;"/>
+    </g>
+</svg>

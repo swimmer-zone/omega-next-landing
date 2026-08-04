@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+html {
+    font-size: 20px;
+}
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $black;
+    background-color: $darkest;
+    font-family: 'Afacad', sans-serif;
+    overflow-x: hidden;
+    letter-spacing: 4rem;
+}
+h1 {
+    font-size: 8rem;
+    color: $purple-dark;
+    text-shadow: 2px 2px 2px #6c6eec44;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+    line-height: 3rem;
+    display: flex;
+}
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+
+    #logo {
+        position: static;
+        transform: translate(0, -40px);
+        width: 120px;
+        padding-right: 60px;
+        margin-bottom: 60px;
+    }
+}
+.hexagons {
+    z-index: -1;
+}

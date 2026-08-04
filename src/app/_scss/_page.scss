@@ -1,0 +1,58 @@
+@use '_variables' as *;
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    font-family: 'Afacad', sans-serif;
+}
+body {
+    background-color: $darkest;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Afacad', sans-serif;
+}
+*,
+button {
+    font-family: 'Afacad', sans-serif;
+    font-size: 1.2rem;
+    color: $lighter;
+}
+h1 {
+    font-size: 5rem;
+}
+h2 {
+    font-size: 3rem;
+    color: $purple;
+}
+h3 {
+    color: $purple;
+    font-size: 1.7rem;
+}
+section,
+header,
+footer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: $purple;
+}

@@ -1,0 +1,85 @@
+@use 'variables' as *;
+
+.whisky-wrapper {
+    display: grid;
+    grid-template-areas:
+        "title rating"
+        "title svg"
+        "specs svg";
+    grid-template-columns: 1fr max-content;
+
+    padding: 0;
+    margin: 10px 10px 60px;
+    background-color: $darkest;
+    border: 1px solid $purple;
+
+    &:first-of-type {
+        margin-top: 64px;
+    }
+
+    .whisky-header {
+        grid-area: title;
+        padding: 0 20px;
+
+        h2 {
+            padding: 0 4px;
+            margin-top: -24px;
+            background-color: $darkest;
+            background-image: linear-gradient(to bottom, #000000, #111111ff);
+            width: fit-content;
+            color: $purple;
+        }
+    }
+    .rating-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        grid-area: rating;
+        align-self: end;
+        padding: 20px;
+    }
+    .specs {
+        grid-area: specs;
+        padding: 0 10px 10px 20px;
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        column-gap: 16px;
+
+        .spec-label {
+            font-size: .9rem;
+            text-align: right;
+            color: $code;
+        }
+        .spec-value {
+            font-size: .9rem;
+
+            .color-swatch {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                margin-right: 4px;
+            }
+        }
+    }
+    .whisky-map {
+        grid-area: svg;
+        align-self: end;
+        margin-right: 20px;
+        margin-bottom: -10px;
+        width: 220px;
+    }
+}
+
+@media(max-width: $mobile-breakpoint) {
+    .whisky-wrapper {
+        display: grid;
+        grid-template-areas:
+        "title"
+        "rating"
+        "specs";
+
+        .whisky-map {
+            display: none;
+        }
+    }
+}

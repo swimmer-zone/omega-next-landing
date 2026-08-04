@@ -1,0 +1,47 @@
+@use '../../app/_scss/variables' as *;
+
+.codeParent {
+    position: relative;
+    font-size: 0.6rem;
+}
+.copyButton {
+    position: absolute;
+    right: -60px;
+    top: 10px;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+
+    svg {
+        width: 32px;
+        height: 32px;
+        fill: $purple;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+        &.click {
+            fill: $white;
+        }
+    }
+}
+.toc {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid $darkest;
+    border-radius: 8px;
+
+    ul {
+        margin: 0.5rem 0 0;
+        padding-left: 1.25rem;
+    }
+    .toc-depth-3 {
+        margin-left: 1rem;
+    }
+    .toc-depth-4 {
+        margin-left: 2rem;
+    }
+}
