@@ -11,17 +11,33 @@ section#diy {
 
     .diy-image {
         position: absolute;
-        top: -200px;
-        left: -200px;
         width: 864px;
         height: 952px;
+        aspect-ratio: 1;
+        object-fit: cover;
         clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        z-index: 1;
+
+        &.cabinet {
+            top: -180px;
+            left: -170px;
+        }
+        &.caddy {
+            bottom: 100px;
+            right: 170px;
+            width: 216px;
+            height: 238px;
+        }
+        &.bar {
+            bottom: 100px;
+            right: 420px;
+            width: 216px;
+            height: 238px;
+        }
     }
     article {
         z-index: 2;
         width: 40vw;
         position: absolute;
-        left: 700px;
+        left: 750px;
     }
 }

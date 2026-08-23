@@ -10,17 +10,40 @@ export default function DIY(): JSX.Element {
             alt=""
             width={216}
             height={238}
-            className="diy-image"
+            className="diy-image cabinet"
+            unoptimized
+        />
+        <Image
+            src="/images/caddy.jpg"
+            alt=""
+            width={216}
+            height={238}
+            className="diy-image caddy"
+            unoptimized
+        />
+        <Image
+            src="/images/bar.jpg"
+            alt=""
+            width={216}
+            height={238}
+            className="diy-image bar"
             unoptimized
         />
         <article className="diy">
             <h2>DIY</h2>
             <p>
-                Here you can see a cabinet that I made out of hexagons, you can find the full build
-                log <Link href="/diy/cabinet">here</Link> as wel as
-                some <Link href="/diy/casemod">other diy projects</Link>. In the past I have written some more blogs and
-                tutorials, they are quite outdated now but you can find them
-                in <a href="/archive">the archive</a>.
+                I spend enough time making things on a screen, so every now and then I like to make something that I can
+                actually touch.
+            </p>
+            <p>
+                One of my bigger projects was this <Link href="/diy/cabinet">hexagonal book cabinet</Link>. It started
+                as a fairly simple idea and turned into considerably more measuring, cutting and figuring things out
+                than I had anticipated.
+            </p>
+            <p>
+                In the past I have written some more blogs and tutorials, they are quite outdated now but you can find
+                them in <a href="/archive">the archive</a> as well as
+                some <Link href="/diy/casemod">other diy projects</Link>
             </p>
         </article>
     </section>);

@@ -7,11 +7,6 @@ html {
 }
 body {
     background-color: $darkest;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -60,6 +55,18 @@ footer {
             height: 180px;
             margin: 10px;
         }
+    }
+}
+a {
+    text-decoration: underline solid $yellow;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition: text-underline-offset 5s ease-in-out;
+
+    &:hover {
+        text-decoration: underline solid $yellow;
+        transition: all .3s ease-in-out;
+        text-underline-offset: 8px;
     }
 }
 

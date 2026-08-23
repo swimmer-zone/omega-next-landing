@@ -12,7 +12,7 @@ section#travels {
         display: flex;
         justify-content: left;
         gap: 1rem;
-        width: 450px;
+        width: 45vw;
         flex-flow: wrap;
         pointer-events: none;
 
@@ -57,9 +57,9 @@ section#travels {
                 background-color: #222222ee;
             }
         }
-        h2.banner {
+        h2.travels {
             background: none;
-            padding-top: 2rem;
+            margin: 0;
         }
     }
 }

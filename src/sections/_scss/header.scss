@@ -28,10 +28,13 @@ header {
     }
     p {
         position: absolute;
-        left: calc(50vw - 190px);
-        top: 620px;
+        left: calc(50vw - 170px);
+        top: 580px;
         width: 880px;
         z-index: 1;
         font-size: 1.8rem;
+        a {
+            font-size: 1.8rem;
+        }
     }
 }

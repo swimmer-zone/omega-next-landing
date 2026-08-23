@@ -28,7 +28,7 @@ export default function Carousel({ images }: Props) {
 			autoplay={{ delay: 2500, disableOnInteraction: true }}
 			pagination={{ type: 'fraction' }}
 			navigation
-			speed={8000}
+			speed={2000}
 			modules={[Autoplay, EffectFade, Pagination, Navigation]}
 			className="mySwiper"
 		>

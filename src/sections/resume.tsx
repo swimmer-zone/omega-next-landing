@@ -23,7 +23,7 @@ export default function Resume(): JSX.Element {
                     connecting to the SoundCloud API to show off my music productions.
                 </p>
                 <p>
-                    Currently this is the 22nd version of my website, this includes major design overhauls,
+                    Currently this is the 23rd version of my website, this includes major design overhauls,
                     migrating to other frameworks or platforms, also migrating from shared hosting to a VPS. The
                     previous version ran on React and currently it is running on Next.js using Typescript on
                     serverless hosting at Vercel.

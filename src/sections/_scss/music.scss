@@ -13,6 +13,10 @@ section#music {
         justify-content: flex-start;
         margin-bottom: 1rem;
     }
+    p {
+        font-size: 1.5rem;
+        width: 50vw;
+    }
     li {
         display: grid;
         grid-template-columns: 100px auto 80px;

@@ -32,7 +32,7 @@ export default async function Travels(): Promise<JSX.Element> {
     return (<section id="travels">
         <Map />
         <div className="banner-grid">
-            <h2 className="banner">
+            <h2 className="travels">
                 Travel Blogs
             </h2>
             <p>

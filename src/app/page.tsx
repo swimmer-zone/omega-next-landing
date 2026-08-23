@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { Header, Music, Travels, Whisky, DIY, Resume, Footer } from '@/sections';
 import Nav from '@/components/nav';
 import './_scss/_page.scss';
+import './_scss/landing.scss';
 
 export const metadata: Metadata = {
     title: 'Ω - Omega',
