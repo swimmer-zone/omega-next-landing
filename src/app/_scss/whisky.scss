@@ -23,9 +23,8 @@
 
         h2 {
             padding: 0 4px;
-            margin-top: -24px;
+            margin-top: -40px;
             background-color: $darkest;
-            background-image: linear-gradient(to bottom, #000000, #111111ff);
             width: fit-content;
             color: $purple;
         }
@@ -67,6 +66,13 @@
         margin-right: 20px;
         margin-bottom: -10px;
         width: 220px;
+
+        img {
+            margin-bottom: 0;
+        }
+    }
+    legend {
+        background-color: transparent !important;
     }
 }
 

@@ -52,9 +52,9 @@ export default async function Archive(): Promise<JSX.Element> {
             <h1>Archive</h1>
             <h2>Tutorials</h2>
             <p>
-                I&#39;ve written a couple of tutorials, mostly for documentation purposes. Currently this website is running
-                on Next.js, which is getting the data through an API. This way I can use Laravel with Filament to make
-                my website more dynamic. A tutorial on that might follow soon. Contact me on <a href="mailto:i@ome.gs">i@ome.gs</a>.
+                I&#39;ve written a couple of tutorials, mostly for documentation purposes. Currently this website is
+                running on Next.js, which is getting the data through an API. This way I can use Laravel with Filament
+                to make my website more dynamic. A tutorial on that might follow soon.
             </p>
             <ul>
                 {tutorials.map((tutorial: Blog, index: number) => (
@@ -69,8 +69,8 @@ export default async function Archive(): Promise<JSX.Element> {
             <h2>Bookmarks</h2>
             <p>
                 My bookmarks are too much to all keep them stored in my browser and most of them are also for sharing,
-                here is a short list of some resources that I use on a daily basis and you can also
-                <a href="downloads/bookmarks.html" download>download my full collection</a> as a file, ready to be
+                here is a short list of some resources that I use on a daily basis and you can
+                also <a href="downloads/bookmarks.html" download>download my full collection</a> as a file, ready to be
                 imported in your browser.
             </p>
             <ul>
@@ -98,10 +98,6 @@ export default async function Archive(): Promise<JSX.Element> {
                 <li><a href="https://www.w3schools.com/colors/colors_converter.asp">Color Converter</a></li>
             </ul>
             <h2>Old Blogs</h2>
-            <p>
-                In the past I&#39;ve written a couple of blogs, because this section is not really active anymore I decided
-                to group them onto one page, so that I can focus more on <Link href="/travels">travel blogs</Link>.
-            </p>
             <ul>
                 {blogs.map((blog: Blog, index: number) => (
                     <li key={index}>

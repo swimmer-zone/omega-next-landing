@@ -1,5 +1,6 @@
 import React, { JSX } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import packageJson from '../../package.json';
 import { API_URL, STORAGE_URL } from '@/lib/api';
 import type { Social } from '@/types/all';
@@ -26,7 +27,8 @@ export default async function Footer(): Promise<JSX.Element> {
 
     return (<>
         <footer id="footer">
-            <Image className="logo" alt="Omega Logo" width="400" height="142" src="vector/omega.svg"/>
+            <Link href="/">Back to Home</Link>
+            <Image className="logo" alt="Omega Logo" width="400" height="142" src="/vector/omega.svg"/>
             <div className={'social'}>
                 {social.map((icon, key) => {
 

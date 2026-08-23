@@ -1,6 +1,6 @@
 @use '../../app/_scss/variables' as *;
 
-nav {
+nav:not(.toc) {
     position: fixed;
     top: 20vh;
     right: 2vw;

@@ -4,6 +4,7 @@ import Tracks from '@/components/tracks';
 
 import '../_scss/_page.scss';
 import '../_scss/music.scss';
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
     title: 'Ω - Music',
@@ -19,5 +20,6 @@ export default async function Music() {
     return (<main>
         <h1>My Music</h1>
         {sections}
+        <Footer />
     </main>);
 }

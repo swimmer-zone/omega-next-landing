@@ -20,6 +20,17 @@ section#whisky {
         p {
             max-width: 65vw;
         }
+        ul {
+            margin-top: 2rem;
+
+            li {
+                cursor: pointer;
+            }
+        }
+        .region {
+            display: block;
+            width: 50vwe;
+        }
     }
     .scotland {
         position: absolute;

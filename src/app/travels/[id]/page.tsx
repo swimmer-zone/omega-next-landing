@@ -4,9 +4,10 @@ import BlogClient from '@/components/blog-client';
 import Diving from '@/components/diving';
 import Footer from '@/components/footer';
 import Water from '@/components/water';
-import '../../_scss/_page.scss';
 import { API_URL } from '@/lib/api';
 import type { Blog } from '@/types/all';
+
+import '../../_scss/_page.scss';
 
 type Props = {
     params: Promise<{ id: string }>;
