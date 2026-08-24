@@ -2,6 +2,7 @@
 
 section#resume {
     background: linear-gradient(60deg, $black 0%, $darkest 40%, $darker 50%, $darkest 60%, $black 100%);
+    background-attachment: fixed;
     position: relative;
     display: flex;
     flex-direction: column;
