@@ -6,6 +6,205 @@ import Image from 'next/image';
 import Timeline from '@/components/timeline';
 import './_scss/resume.scss';
 
+const skills = [
+    {
+        image: 'alpine-js.svg',
+        title: 'AlpineJS',
+    },
+    {
+        image: 'apache.svg',
+        title: 'Apache',
+    },
+    {
+        image: 'composer.svg',
+        title: 'Composer',
+    },
+    {
+        image: 'css3.svg',
+        title: 'CSS 3',
+    },
+    {
+        image: 'docker.svg',
+        title: 'Docker, including Lando',
+    },
+    {
+        image: 'git.svg',
+        title: 'Git, which also includes GitHub, GitLab, Bitbucket and CI/CD',
+    },
+    {
+        image: 'jetbrains.svg',
+        title: 'JetBrains PHPStorm, WebStorm etc.',
+    },
+    {
+        image: 'jira.svg',
+        title: 'Jira and other Atlassian tools, like Confluence',
+    },
+    {
+        image: 'jquery.svg',
+        title: 'jQuery',
+    },
+    {
+        image: 'laravel.svg',
+        title: 'Laravel',
+    },
+    {
+        image: 'linux.svg',
+        title: 'Linux',
+    },
+    {
+        image: 'magento.svg',
+        title: 'Magento / Adobe Commerce',
+    },
+    {
+        image: 'mysql.svg',
+        title: 'MySQL',
+    },
+    {
+        image: 'next-js.svg',
+        title: 'Next JS',
+    },
+    {
+        image: 'nginx.svg',
+        title: 'Nginx',
+    },
+    {
+        image: 'node-js.svg',
+        title: 'Node JS & NPM',
+    },
+    {
+        image: 'photoshop.svg',
+        title: 'Photoshop',
+    },
+    {
+        image: 'php.svg',
+        title: 'PHP',
+    },
+    {
+        image: 'postgressql.svg',
+        title: 'PostgreSQL',
+    },
+    {
+        image: 'react.svg',
+        title: 'React',
+    },
+    {
+        image: 'slack.svg',
+        title: 'Slack',
+    },
+    {
+        image: 'ssh.svg',
+        title: 'SSH',
+    },
+    {
+        image: 'symfony.svg',
+        title: 'Symfony',
+    },
+    {
+        image: 'arduino.svg',
+        title: 'Arduino',
+    },
+    {
+        image: 'c-plus-plus.svg',
+        title: 'C++',
+    },
+    {
+        image: 'c-sharp.svg',
+        title: 'C#',
+    },
+    {
+        image: 'codeigniter.svg',
+        title: 'Codeigniter',
+    },
+    {
+        image: 'cypress.svg',
+        title: 'Cypress',
+    },
+    {
+        image: 'debian.svg',
+        title: 'Debian',
+    },
+    {
+        image: 'filezilla.svg',
+        title: 'Filezilla',
+    },
+    {
+        image: 'html5.svg',
+        title: 'HTML 5',
+    },
+    {
+        image: 'javascript.svg',
+        title: 'JavaScript',
+    },
+    {
+        image: 'json.svg',
+        title: 'JSON',
+    },
+    {
+        image: 'markdown.svg',
+        title: 'Markdown',
+    },
+    {
+        image: 'ms-dos.svg',
+        title: 'MS DOS',
+    },
+    {
+        image: 'nano.svg',
+        title: 'Nano',
+    },
+    {
+        image: 'oh-my-zsh.svg',
+        title: 'Oh My zsh',
+    },
+    {
+        image: 'powershell.svg',
+        title: 'PowerShell',
+    },
+    {
+        image: 'putty.svg',
+        title: 'Putty',
+    },
+    {
+        image: 'python.svg',
+        title: 'Python',
+    },
+    {
+        image: 'raspberry-pi.svg',
+        title: 'Raspberry PI',
+    },
+    {
+        image: 'sass.svg',
+        title: 'SASS',
+    },
+    {
+        image: 'stack-overflow.svg',
+        title: 'Stack Overflow',
+    },
+    {
+        image: 'swagger.svg',
+        title: 'Swagger',
+    },
+    {
+        image: 'tailwind-css.svg',
+        title: 'Tailwind',
+    },
+    {
+        image: 'ubuntu.svg',
+        title: 'Ubuntu',
+    },
+    {
+        image: 'vs-code.svg',
+        title: 'VS Code',
+    },
+    {
+        image: 'xml.svg',
+        title: 'XML',
+    },
+    {
+        image: 'yaml.svg',
+        title: 'YAML',
+    },
+];
+
 export default function Resume(): JSX.Element {
     return (<section id="resume">
         <h2>Resume</h2>
@@ -65,85 +264,19 @@ export default function Resume(): JSX.Element {
             </div>
             <Timeline/>
         </article>
-        <Marquee className="techniques" pauseOnHover={true} speed={200} direction="left" autoFill={true}>
+        <Marquee className="techniques" pauseOnHover={true} speed={150} direction="left" autoFill={true}>
             <ul>
-                <li><Image width="64" height="64" src="/vector/logos/alpine-js.svg" title="AlpineJS"
-                           alt="AlpineJS"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/apache.svg" title="Apache" alt="Apache"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/composer.svg" title="Composer" alt="Composer"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/css3.svg" title="CSS 3" alt="CSS 3"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/docker.svg" title="Docker, inlcuding Lando"
-                           alt="Docker, inlcuding Lando"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/git.svg"
-                           title="Git, which also includes GitHub, GitLab, Bitbucket and CI/CD"
-                           alt="Git, which also includes GitHub, GitLab, Bitbucket and CI/CD"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/jetbrains.svg"
-                           title="JetBrains PHPStorm, WebStorm etc." alt="JetBrains PHPStorm, WebStorm etc."/></li>
-                <li><Image width="64" height="64" src="/vector/logos/jira.svg"
-                           title="Jira and other Atlassian tools, like Confluence"
-                           alt="Jira and other Atlassian tools, like Confluence"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/jquery.svg" title="jQuery" alt="jQuery"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/laravel.svg" title="Laravel" alt="Laravel"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/linux.svg" title="Linux" alt="Linux"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/magento.svg" title="Magento / Adobe Commerce"
-                           alt="Magento / Adobe Commerce"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/mysql.svg" title="MySQL" alt="MySQL"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/next-js.svg" title="Next JS" alt="Next JS"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/nginx.svg" title="Nginx" alt="Nginx"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/node-js.svg" title="Node JS & NPM"
-                           alt="Node JS & NPM"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/photoshop.svg" title="Photoshop"
-                           alt="Photoshop"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/php.svg" title="PHP" alt="PHP"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/postgressql.svg" title="PostgreSQL"
-                           alt="PostgreSQL"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/react.svg" title="React" alt="React"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/slack.svg" title="Slack" alt="Slack"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/ssh.svg" title="SSH" alt="SSH"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/symfony.svg" title="Symfony" alt="Symfony"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/arduino.svg" title="Arduino" alt="Arduino"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/c-plus-plus.svg" title="C++" alt="C++"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/c-sharp.svg" title="C#" alt="C#"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/codeigniter.svg" title="Codeigniter"
-                           alt="Codeigniter"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/cypress.svg" title="Cypress" alt="Cypress"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/debian.svg" title="Debian" alt="Debian"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/filezilla.svg" title="Filezilla"
-                           alt="Filezilla"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/html5.svg" title="HTML 5" alt="HTML 5"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/javascript.svg" title="JavaScript"
-                           alt="JavaScript"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/json.svg" title="JSON" alt="JSON"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/markdown.svg" title="Markdown" alt="Markdown"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/ms-dos.svg" title="MS DOS" alt="MS DOS"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/nano.svg" title="Nano" alt="Nano"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/oh-my-zsh.svg" title="Oh My zsh"
-                           alt="Oh My zsh"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/powershell.svg" title="PowerShell"
-                           alt="PowerShell"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/putty.svg" title="Putty" alt="Putty"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/python.svg" title="Python" alt="Python"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/raspberry-pi.svg" title="Raspberry PI"
-                           alt="Raspberry PI"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/sass.svg" title="SASS" alt="SASS"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/stack-overflow.svg" title="Stack Overflow"
-                           alt="Stack Overflow"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/swagger.svg" title="Swagger" alt="Swagger"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/tailwind-css.svg" title="Tailwind"
-                           alt="Tailwind"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/ubuntu.svg" title="Ubuntu" alt="Ubuntu"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/vs-code.svg" title="VS Code" alt="VS Code"/>
-                </li>
-                <li><Image width="64" height="64" src="/vector/logos/xml.svg" title="XML" alt="XML"/></li>
-                <li><Image width="64" height="64" src="/vector/logos/yaml.svg" title="YAML" alt="YAML"/></li>
+                {skills.map((skill) => (
+                    <li key={skill.image}>
+                        <Image
+                            width={64}
+                            height={64}
+                            src={'/vector/logos/' + skill.image}
+                            title={skill.title}
+                            alt={skill.title}
+                        />
+                    </li>
+                ))}
             </ul>
         </Marquee>
     </section>);
