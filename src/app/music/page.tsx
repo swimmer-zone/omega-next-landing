@@ -17,7 +17,7 @@ export default async function Music() {
         sections.push(<Tracks key={i} currentSection={i} showTitle={true} />)
     }
 
-    return (<main>
+    return (<main className="music-page">
         <h1>My Music</h1>
         {sections}
         <Footer />

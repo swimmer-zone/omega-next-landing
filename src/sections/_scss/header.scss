@@ -1,8 +1,5 @@
 @use '../../app/_scss/variables' as *;
 
-body {
-    height: calc((7 * 100vh) + 250vh);
-}
 header {
     $s: 60px;
     position: relative;

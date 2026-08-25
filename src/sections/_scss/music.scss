@@ -13,7 +13,8 @@ section#music {
         justify-content: flex-start;
         margin-bottom: 1rem;
     }
-    p {
+    p,
+    p > a {
         font-size: 1.5rem;
         width: 50vw;
     }

@@ -1,9 +1,10 @@
 @use '_variables' as *;
 
-body {
+.landing-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height: calc((7 * 100vh) + 250vh);
 }

@@ -26,7 +26,7 @@ export default async function Footer(): Promise<JSX.Element> {
     const social = (await getSocials()) || [];
 
     return (<>
-        <footer id="footer">
+        <footer id="footer" className="component">
             <Link href="/">Back to Home</Link>
             <Image className="logo" alt="Omega Logo" width="400" height="142" src="/vector/omega.svg"/>
             <div className={'social'}>

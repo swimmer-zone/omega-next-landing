@@ -48,6 +48,11 @@ export default function Resume(): JSX.Element {
                 </p>
                 <ul>
                     <li>
+                        <a href="https://playground.ome.gs">Playground</a> the previous version of my website, I kept it
+                        online so it can serve as my playground for testing new features and to serve as my creative
+                        outlet.
+                    </li>
+                    <li>
                         <a href="https://weerbaar.ome.gs">Weerbaar Worden</a> a website that I made for a friend,
                         which was meant to be child friendly.
                     </li>

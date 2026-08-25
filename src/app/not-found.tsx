@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound(): JSX.Element {
-    return (<main>
+    return (<main className="not-found-page">
         <div className="content-column">
             <div className="error">
                 <h1>

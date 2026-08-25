@@ -265,6 +265,7 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
             <article
                 key={section.id}
                 id={`section_${section.id}`}
+                className={showTitle ? 'album' : 'no-album'}
             >
                     {showTitle && (
                         <h3>{section.title}</h3>

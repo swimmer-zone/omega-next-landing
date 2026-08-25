@@ -1,6 +1,6 @@
 @use '../../app/_scss/variables' as *;
 
-.hexagon-gallery {
+.hexagons {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: 180px;

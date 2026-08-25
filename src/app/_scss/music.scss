@@ -1,12 +1,13 @@
 @use 'variables' as *;
 
-body {
+.music-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background: linear-gradient(120deg, $darker 0%, $darkest 40%, $black 50%, $darkest 60%, $darker 100%) fixed;
     background-size: cover;
+    width: 100vw;
 
     article {
         display: flex;
@@ -18,10 +19,12 @@ body {
         gap: 2rem;
         width: 50vw;
         border: none;
-        background-color: $darker;
-        border-radius: 1rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+        &.album {
+            background-color: $darker;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
         &:has(.playing) {
             border: 1px solid $purple;
         }

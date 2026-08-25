@@ -9,5 +9,5 @@ export default function Hexagons() {
         result.push(<div key={index}></div>);
     }
 
-    return <div className="hexagon-gallery">{result}</div>;
+    return <div className="hexagons">{result}</div>;
 }
