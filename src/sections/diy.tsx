@@ -20,7 +20,7 @@ export default function DIY(): JSX.Element {
             </p>
             <p>
                 In the past I have written some more blogs and tutorials, they are quite outdated now but you can still
-                find them on my playground website in <a href="https://playground.ome.gs/archive">the archive</a>.
+                find them on my <a href="https://playground.ome.gs/">playground website</a>.
             </p>
             <div className="diy-images">
                 <Image src="/images/cabinet.jpg" alt="" width={864} height={952} className="diy-image cabinet"/>
