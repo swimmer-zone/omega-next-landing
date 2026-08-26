@@ -7,7 +7,7 @@ import '../_scss/_page.scss';
 import '../_scss/music.scss';
 
 export const metadata: Metadata = {
-    title: 'Ω - Music',
+    title: 'Ωmega - Music',
     description: '',
 };
 

@@ -10,7 +10,7 @@ import type { Blog } from '@/types/all';
 import '../../_scss/_page.scss';
 
 export const metadata: Metadata = {
-    title: 'Ω - Travels',
+    title: 'Ωmega - Travels',
     description: '',
 };
 

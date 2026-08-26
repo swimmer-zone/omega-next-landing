@@ -12,7 +12,7 @@ import { API_URL } from '@/lib/api';
 import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-    title: 'Ω - Whisky',
+    title: 'Ωmega - Whisky',
     description: 'My whisky tastings.',
 };
 

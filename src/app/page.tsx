@@ -14,7 +14,7 @@ import './_scss/_page.scss';
 import './_scss/landing.scss';
 
 export const metadata: Metadata = {
-    title: 'Ω - Omega',
+    title: 'Ωmega',
     description: 'Ω - My landing page including all of my hobbies and my resume',
     keywords: 'omega,water,phlegmatic,music,techno,ambient,minimal,lounge,psytrance,blog,weblog,template,html,css,menu,responsive,travel,travels,travelblog,tutorials,diy,swimmer,yupsie',
     authors: [{name: 'Omega'}],
