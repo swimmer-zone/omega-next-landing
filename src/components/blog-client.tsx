@@ -6,8 +6,10 @@ import remarkGfm from 'remark-gfm';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atelierForestDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 import Carousel from '@/components/carousel';
 import HexGallery from '@/components/hex-gallery';
+
 import type { Gallery, Heading } from '@/types/all';
 
 import './_scss/blog-client.scss';

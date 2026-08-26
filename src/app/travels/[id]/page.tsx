@@ -1,8 +1,7 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogClient from '@/components/blog-client';
-import Diving from '@/components/diving';
 import Footer from '@/components/footer';
 import Water from '@/components/water';
 import { API_URL } from '@/lib/api';
@@ -58,7 +57,6 @@ export default async function TravelPage({ params }: Props): Promise<JSX.Element
                     galleries={travel.galleries}
                 />
             </div>
-            {travel.title === 'Thailand' && <Diving />}
             {travel.title === 'Thailand' && <Water />}
             <Footer />
         </main>
