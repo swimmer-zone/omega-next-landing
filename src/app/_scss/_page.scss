@@ -13,6 +13,7 @@ body {
 }
 *,
 button {
+    scroll-behavior: smooth;
     font-family: 'Afacad', sans-serif;
     font-size: 1.2rem;
     color: $lighter;

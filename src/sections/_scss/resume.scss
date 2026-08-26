@@ -8,6 +8,7 @@ section#resume {
     align-items: center;
     justify-content: flex-start;
     height: 350vh;
+    scroll-snap-align: none;
 
     article {
         display: flex;

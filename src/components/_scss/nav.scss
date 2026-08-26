@@ -10,6 +10,13 @@ nav:not(.toc) {
     padding: 0.5rem;
     border-radius: 50px;
     margin-top: -50px;
+    box-shadow:
+            0 0 10px rgba(0, 0, 0, 0.5),
+            -2px -2px 10px rgba(0, 0, 0, 0.1),
+            2px 2px 10px rgba(0, 0, 0, 0.1),
+            inset 0 0 10px rgba(0, 0, 0, 0.9),
+             -2px -2px 10px rgba(0, 0, 0, 0.1),
+             2px 2px 10px rgba(0, 0, 0, 0.1);
 
     * {
         outline: none;
