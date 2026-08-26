@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Footer from '@/components/footer';
 import '../_scss/_page.scss';
 import { API_URL } from '@/lib/api';
@@ -66,14 +66,14 @@ export default async function Archive(): Promise<JSX.Element> {
                     </li>
                 ))}
             </ul>
-            <h2>Bookmarks</h2>
-            <p>
+            <h2 className="bookmarks">Bookmarks</h2>
+            <p className="bookmarks">
                 My bookmarks are too much to all keep them stored in my browser and most of them are also for sharing,
                 here is a short list of some resources that I use on a daily basis and you can
                 also <a href="/downloads/bookmarks.html" download>download my full collection</a> as a file, ready to be
                 imported in your browser.
             </p>
-            <ul>
+            <ul className="bookmarks">
                 <li><a href="https://tympanus.net/codrops/">Codrops</a></li>
                 <li><a href="https://css-tricks.com/">CSS Tricks</a></li>
                 <li><a href="https://caniuse.com/">Can I Use</a></li>

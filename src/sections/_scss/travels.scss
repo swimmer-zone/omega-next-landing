@@ -64,6 +64,9 @@ section#travels {
             padding-bottom: 2rem;
             border-bottom: 1px solid $light;
 
+            .banner {
+                border: 1px solid $purple;
+            }
             p {
                 width: 100%;
             }

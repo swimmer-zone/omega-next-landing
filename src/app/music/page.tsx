@@ -1,14 +1,14 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Footer from "@/components/footer";
 import Tracks from '@/components/tracks';
 
 import '../_scss/_page.scss';
 import '../_scss/music.scss';
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
     title: 'Ω - Music',
-    description: 'All the places I have visited in descending order.',
+    description: '',
 };
 
 export default async function Music() {

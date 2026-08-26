@@ -1,7 +1,6 @@
 import React, { JSX } from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import Footer from '@/components/footer';
 import Rating from '@/components/rating';
 import type { Tasting } from '@/types/all';
@@ -53,31 +52,11 @@ export default async function Whisky(): Promise<JSX.Element> {
 
     return (<main>
         <div className="content-column">
-            <h1>Whisky</h1>
-            <p key="intro">
-                My love for whisky began quite some time ago when I went to the liquor store and let them advise me a
-                whisky that was not too peaty and I came home with the Tomatin Legacy, which was more of the spicy and
-                fruity kind (vanilla and citrus). It really took off when I went
-                to <Link href="/travels/uk#edinburgh">Edinburgh</Link> and visited the whisky museum. From that moment
-                on I have tried {tastings.length} whisky&apos;s, starting with Scotch, but after visiting the
-                Teeling distillery and the whiskey museum in <Link href="/travels/uk#dublin">Dublin</Link> my interest
-                in Irish whiskey grew as well.
+            <h1>My Tastings</h1>
+            <p>
+                My recommendation to get inspired is <a href="https://www.thewhiskyexchange.com/inspiration">
+                    Whisky 101</a>.
             </p>
-            <p>A couple of resources to explore whisky</p>
-            <ul>
-                <li>
-                    <a href="https://blog.thewhiskyexchange.com/2022/11/whisky-101-part-one-a-beginners-guide/">
-                        Whisky 101 - A beginner&apos;s guide
-                    </a>
-                </li>
-                <li>
-                    <a href="https://blog.thewhiskyexchange.com/2022/11/whisky-101-part-two-whiskey-around-the-world/">
-                        Whisky 101 - Whisk(e)y around the world
-                    </a>
-                </li>
-            </ul>
-
-            <h2 id="whiskys">My Tastings</h2>
 
             {tastings.map(tasting => {
                 return (<React.Fragment key={tasting.id + '_fragment'}>
@@ -125,7 +104,7 @@ export default async function Whisky(): Promise<JSX.Element> {
                             <div className="spec-value">{tasting.date_of_tasting}</div>
 
                             <div className="spec-label">Flavour:</div>
-                            <div className="spec-value">{tasting.flavours}</div>
+                            <div className="spec-value">{tasting.flavours.join(', ')}</div>
 
                             <div className="spec-label">Finish:</div>
                             <div className="spec-value">{tasting.finish}</div>

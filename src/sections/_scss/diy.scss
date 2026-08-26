@@ -10,6 +10,7 @@ section#diy {
     overflow: hidden;
 
     .diy-images {
+        pointer-events: none;
         position: absolute;
         width: 100vw;
         height: 100vh;
@@ -28,14 +29,12 @@ section#diy {
                 top: -180px;
                 left: -170px;
             }
-
             &.caddy {
                 bottom: 100px;
                 right: 170px;
                 width: 216px;
                 height: 238px;
             }
-
             &.bar {
                 bottom: 100px;
                 right: 420px;

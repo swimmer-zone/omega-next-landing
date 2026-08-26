@@ -1,8 +1,7 @@
 import React, { JSX } from 'react';
-import localFont from 'next/font/local';
+import type { Metadata, Viewport } from 'next';
 // import { Analytics } from '@vercel/analytics/react';
 // import { SpeedInsights } from '@vercel/speed-insights/next';
-import type { Metadata, Viewport } from 'next';
 import EasterEgg from '@/components/easter-egg';
 
 export const metadata: Metadata = {
@@ -18,12 +17,8 @@ export const viewport: Viewport = {
     initialScale: 1,
 };
 
-const myFont = localFont({
-    src: './afacad.ttf',
-});
-
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>): JSX.Element {
-    return (<html lang="en" className={myFont.className}>
+    return (<html lang="en">
         <EasterEgg />
         <body>
             {children}

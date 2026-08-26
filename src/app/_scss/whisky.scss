@@ -44,12 +44,12 @@
         column-gap: 16px;
 
         .spec-label {
-            font-size: .9rem;
+            font-size: 1.2rem;
             text-align: right;
             color: $code;
         }
         .spec-value {
-            font-size: .9rem;
+            font-size: 1.2rem;
 
             .color-swatch {
                 display: inline-block;
@@ -85,6 +85,17 @@
         "rating"
         "specs";
 
+        h3 {
+            font-size: 1.2rem;
+        }
+        .specs {
+            grid-template-columns: 80px 1fr;
+
+            .spec-label,
+            .spec-value {
+                font-size: 1rem;
+            }
+        }
         .whisky-map {
             display: none;
         }

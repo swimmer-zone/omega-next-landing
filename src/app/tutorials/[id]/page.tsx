@@ -1,10 +1,17 @@
 import { JSX } from 'react';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogClient from '@/components/blog-client';
 import Footer from '@/components/footer';
-import '../../_scss/_page.scss';
 import { API_URL } from '@/lib/api';
 import type { Blog, Gallery } from '@/types/all';
+
+import '../../_scss/_page.scss';
+
+export const metadata: Metadata = {
+    title: 'Ω - Tutorials',
+    description: '',
+};
 
 type Props = {
     params: Promise<{ id: string }>;
