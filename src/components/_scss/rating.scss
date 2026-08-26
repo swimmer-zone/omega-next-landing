@@ -18,8 +18,8 @@
 	}
 	.stars-base {
 		.star {
-			color: $quotes;
-			fill: $quotes;
+			color: $dark;
+			fill: $dark;
 		}
 	}
 	.stars-fill {
@@ -35,4 +35,9 @@
 			fill: $yellow;
 		}
 	}
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+
 }

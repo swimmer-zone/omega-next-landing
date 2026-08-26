@@ -79,7 +79,6 @@ li:has(.playing) {
                 width: 2rem;
                 height: 2rem;
                 padding: 0;
-                //color: #aaa;
             }
             .rhap_button-clear:hover {
                 color: $purple;
@@ -88,12 +87,8 @@ li:has(.playing) {
                 outline: 1px solid #fff;
                 outline-offset: 3px;
             }
-            .rhap_rewind-button,
-            .rhap_rewind-button svg,
             .rhap_skip-button,
             .rhap_skip-button svg,
-            .rhap_forward-button,
-            .rhap_forward-button svg,
             .rhap_play-pause-button,
             .rhap_play-pause-button svg,
             .rhap_volume-button {
@@ -133,17 +128,38 @@ li:has(.playing) {
     }
 }
 
-@media (max-width: 600px) {
+
+@media(max-width: $mobile-breakpoint) {
     .rhap_container {
-        padding: 0.75rem;
-    }
-    .rhap_controls-section {
-        gap: 0.5rem;
-    }
-    .rhap_volume-controls {
-        display: none;
-    }
-    .rhap_progress-section {
-        gap: 0.5rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        background-color: $darker;
+        padding: 0.75rem 1.5rem;
+
+        .rhap_main {
+            .rhap_progress-section .rhap_progress-container .rhap_progress-bar {
+                .rhap_download-progress {
+                    margin-top: -11px;
+                }
+                .rhap_progress-indicator {
+                    margin-top: -7px;
+                }
+            }
+            .rhap_controls-section {
+                justify-content: center;
+
+                .rhap_skip-button,
+                .rhap_skip-button svg,
+                .rhap_play-pause-button,
+                .rhap_play-pause-button svg,
+                .rhap_volume-button {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+                .rhap_volume-controls {
+                    display: none;
+                }
+            }
+        }
     }
 }

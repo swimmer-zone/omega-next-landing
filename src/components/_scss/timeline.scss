@@ -1,0 +1,106 @@
+@use '../../app/_scss/variables' as *;
+
+.timeline {
+    $hue: 223;
+    $bg: hsl($hue, 10%, 90%);
+    $fg: hsl($hue, 10%, 10%);
+    $primary: hsl($hue, 90%, 50%);
+    $trans-dur: 0.3s;
+    $trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
+
+    width: 100%;
+    max-width: 36em;
+
+    .item {
+        position: relative;
+        padding-bottom: 2.25em;
+
+        &:not(:last-child):before {
+            background-color: $light;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 1em;
+            left: 2.2em;
+            width: 0.125em;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+        .item-header {
+            display: flex;
+
+            .dot {
+                background-color: currentColor;
+                border-radius: 50%;
+                display: inline-block;
+                flex-shrink: 0;
+                margin: 0.625em 0;
+                margin-inline-end: 1em;
+                position: relative;
+                width: 0.75em;
+                height: 0.75em;
+                color: $light;
+            }
+            span:not(.dot) {
+                width: 100%;
+
+                strong {
+                    font-size: 1.2em;
+                    line-height: 1.333;
+                    color: $light;
+                }
+                time {
+                    font-size: 0.833em;
+                    line-height: 2.4;
+                    color: $light;
+                }
+            }
+        }
+        p {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: $trans-dur, 0s;
+            background-color: $darker;
+            padding: 0.5em 0.75em;
+            width: 80%;
+            border-radius: 0.375em;
+            margin-top: 0.5em;
+            margin-inline-start: 4em;
+            height: auto;
+        }
+        .chevron {
+            height: 24px;
+            width: 24px;
+            margin: 10px;
+            transform: rotate(270deg);
+        }
+        .tag {
+            font-size: .8rem;
+            letter-spacing: 1px;
+            background-color: $purple;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            line-height: 1rem;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    section#resume .timeline {
+        width: 100%;
+
+        .item {
+            position: relative !important;
+
+            &:before {
+                position: absolute !important;
+            }
+            p {
+                display: none;
+            }
+        }
+    }
+}

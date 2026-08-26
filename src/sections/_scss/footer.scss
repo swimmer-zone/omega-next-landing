@@ -38,7 +38,6 @@ footer {
                 background-image: url('/images/me-hover.png');
                 transition: all 0.5s ease-in-out;
             }
-
             input,
             textarea {
                 background-color: $darker;
@@ -139,5 +138,61 @@ footer {
     }
     25%, 75% {
         opacity: 0.5;
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    @import '../../app/_scss/mobile';
+
+    footer {
+        justify-content: flex-start;
+
+        h2 {
+            align-self: flex-start;
+            width: 90%;
+            margin: 1rem auto;
+        }
+        article {
+            flex-direction: column;
+            justify-content: flex-start;
+
+            fieldset {
+                width: 100%;
+                border: 2px solid $purple;
+                background-size: 120px;
+                transform: unset;
+                margin: 0;
+                box-sizing: border-box;
+
+                input,
+                textarea,
+                button {
+                    width: 100% !important;
+                    margin-inline: 0;
+                    box-sizing: border-box;
+                    margin-top: 0;
+                }
+                button {
+                    width: 60% !important;
+                }
+            }
+            .social {
+                flex-direction: unset;
+                justify-content: space-evenly;
+                align-self: center;
+
+                a {
+                    &::after,
+                    &::before {
+                        display: none;
+                    }
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
     }
 }

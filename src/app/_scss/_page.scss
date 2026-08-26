@@ -70,6 +70,67 @@ a {
     }
 }
 
+
+@media(max-width: $mobile-breakpoint) {
+    html {
+        scroll-snap-type: unset;
+    }
+    body {
+        background-color: $darkest;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: 'Afacad', sans-serif;
+    }
+    *,
+    button {
+        font-size: 1.2rem;
+        color: $lighter;
+    }
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 3rem;
+        color: $purple;
+    }
+    h3 {
+        color: $purple;
+        font-size: 1.7rem;
+    }
+    .content-column {
+        width: 100%;
+        margin-inline: auto;
+        margin-bottom: unset;
+
+        //img {
+        //    max-width: 600px;
+        //    margin-bottom: 4vh;
+        //
+        //    &.shade {
+        //        box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.2), 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+        //    }
+        //    &.small {
+        //        height: 180px;
+        //        margin: 10px;
+        //    }
+        //}
+    }
+    //a {
+    //    text-decoration: underline solid $yellow;
+    //    text-underline-offset: 4px;
+    //    text-decoration-thickness: 1px;
+    //    transition: text-underline-offset 5s ease-in-out;
+    //
+    //    &:hover {
+    //        text-decoration: underline solid $yellow;
+    //        transition: all .3s ease-in-out;
+    //        text-underline-offset: 8px;
+    //    }
+    //}
+}
+
+
 ::-webkit-scrollbar {
     width: 8px;
 }

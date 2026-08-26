@@ -1,8 +1,7 @@
 @use '../../app/_scss/variables' as *;
 
 section#resume {
-    background: linear-gradient(60deg, $black 0%, $darkest 40%, $darker 50%, $darkest 60%, $black 100%);
-    background-attachment: fixed;
+    background: linear-gradient(60deg, $black 0%, $darkest 40%, $darker 50%, $darkest 60%, $black 100%) fixed;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ section#resume {
         justify-content: center;
         gap: 4rem;
         width: 80vw;
-        overflow-y: scroll;
         height: 310vh;
         position: absolute;
         top: 20vh;
@@ -30,91 +28,6 @@ section#resume {
         }
     }
 
-    $hue: 223;
-    $bg: hsl($hue, 10%, 90%);
-    $fg: hsl($hue, 10%, 10%);
-    $primary: hsl($hue, 90%, 50%);
-    $trans-dur: 0.3s;
-    $trans-timing: cubic-bezier(0.65, 0, 0.35, 1);
-
-    .timeline {
-        width: 100%;
-        max-width: 36em;
-    }
-    .item {
-        position: relative;
-        padding-bottom: 2.25em;
-
-        &:not(:last-child):before {
-            background-color: $light;
-            content: "";
-            display: block;
-            position: absolute;
-            top: 1em;
-            left: 2.2em;
-            width: 0.125em;
-            height: 100%;
-            transform: translateX(-50%);
-        }
-        .item-header {
-            display: flex;
-
-            .dot {
-                background-color: currentColor;
-                border-radius: 50%;
-                display: inline-block;
-                flex-shrink: 0;
-                margin: 0.625em 0;
-                margin-inline-end: 1em;
-                position: relative;
-                width: 0.75em;
-                height: 0.75em;
-                color: $light;
-            }
-            span:not(.dot) {
-                width: 100%;
-
-                strong {
-                    font-size: 1.2em;
-                    line-height: 1.333;
-                    color: $light;
-                }
-                time {
-                    font-size: 0.833em;
-                    line-height: 2.4;
-                    color: $light;
-                }
-            }
-        }
-            p {
-                opacity: 1;
-                visibility: visible;
-                transition-delay: $trans-dur, 0s;
-                background-color: $darker;
-                padding: 0.5em 0.75em;
-                width: 80%;
-                border-radius: 0.375em;
-                margin-top: 0.5em;
-                margin-inline-start: 4em;
-                height: auto;
-            }
-        .chevron {
-            height: 24px;
-            width: 24px;
-            margin: 10px;
-            transform: rotate(270deg);
-        }
-        .tag {
-            font-size: .8rem;
-            letter-spacing: 1px;
-            background-color: $purple;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            line-height: 1rem;
-            margin-bottom: 8px;
-        }
-    }
     .techniques {
         position: sticky;
         top: 50vh;
@@ -129,6 +42,51 @@ section#resume {
             list-style: none;
             padding: 0;
             margin-top: 40vh;
+        }
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    @import '../../app/_scss/mobile';
+
+    section#resume {
+        display: block;
+
+        h2 {
+            width: 90%;
+            margin: 1rem auto;
+        }
+        article {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $light;
+            height: unset;
+            flex-direction: column;
+
+            & > * {
+                align-self: flex-start;
+            }
+            & > div {
+                width: 100%;
+                max-width: 1000px;
+            }
+        }
+        .techniques {
+            display: none;
+        //    position: sticky;
+        //    top: 50vh;
+        //    height: 50vh;
+        //    background: linear-gradient(to bottom, #00000000 0%, #000000ff 100%);
+        //    pointer-events: none;
+        //
+        //    ul {
+        //        pointer-events: all;
+        //        display: flex;
+        //        gap: 2vw;
+        //        list-style: none;
+        //        padding: 0;
+        //        margin-top: 40vh;
+        //    }
         }
     }
 }

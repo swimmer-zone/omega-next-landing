@@ -9,29 +9,39 @@ section#diy {
     gap: 2rem;
     overflow: hidden;
 
-    .diy-image {
+    .diy-images {
         position: absolute;
-        width: 864px;
-        height: 952px;
-        aspect-ratio: 1;
-        object-fit: cover;
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: -750px;
 
-        &.cabinet {
-            top: -180px;
-            left: -170px;
-        }
-        &.caddy {
-            bottom: 100px;
-            right: 170px;
-            width: 216px;
-            height: 238px;
-        }
-        &.bar {
-            bottom: 100px;
-            right: 420px;
-            width: 216px;
-            height: 238px;
+        .diy-image {
+            position: absolute;
+            width: 864px;
+            height: 952px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+            &.cabinet {
+                top: -180px;
+                left: -170px;
+            }
+
+            &.caddy {
+                bottom: 100px;
+                right: 170px;
+                width: 216px;
+                height: 238px;
+            }
+
+            &.bar {
+                bottom: 100px;
+                right: 420px;
+                width: 216px;
+                height: 238px;
+            }
         }
     }
     article {
@@ -39,5 +49,28 @@ section#diy {
         width: 40vw;
         position: absolute;
         left: 750px;
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    @import '../../app/_scss/mobile';
+
+    section#diy {
+        article {
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $light;
+        }
+        .diy-images {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            width: unset;
+            height: unset;
+        }
+        .diy-image {
+            width: 108px !important;
+            height: 119px !important;
+        }
     }
 }

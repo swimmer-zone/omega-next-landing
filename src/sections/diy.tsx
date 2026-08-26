@@ -5,30 +5,6 @@ import Image from "next/image";
 
 export default function DIY(): JSX.Element {
     return (<section id="diy">
-        <Image
-            src="/images/cabinet.jpg"
-            alt=""
-            width={216}
-            height={238}
-            className="diy-image cabinet"
-            unoptimized
-        />
-        <Image
-            src="/images/caddy.jpg"
-            alt=""
-            width={216}
-            height={238}
-            className="diy-image caddy"
-            unoptimized
-        />
-        <Image
-            src="/images/bar.jpg"
-            alt=""
-            width={216}
-            height={238}
-            className="diy-image bar"
-            unoptimized
-        />
         <article className="diy">
             <h2>DIY</h2>
             <p>
@@ -45,6 +21,32 @@ export default function DIY(): JSX.Element {
                 them in <a href="/archive">the archive</a> as well as
                 some <Link href="/diy/casemod">other diy projects</Link>
             </p>
+            <div className="diy-images">
+                <Image
+                    src="/images/cabinet.jpg"
+                    alt=""
+                    width={216}
+                    height={238}
+                    className="diy-image cabinet"
+                    unoptimized
+                />
+                <Image
+                    src="/images/caddy.jpg"
+                    alt=""
+                    width={216}
+                    height={238}
+                    className="diy-image caddy"
+                    unoptimized
+                />
+                <Image
+                    src="/images/bar.jpg"
+                    alt=""
+                    width={216}
+                    height={238}
+                    className="diy-image bar"
+                    unoptimized
+                />
+            </div>
         </article>
     </section>);
 }

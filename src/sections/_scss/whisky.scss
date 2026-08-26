@@ -39,3 +39,30 @@ section#whisky {
         }
     }
 }
+
+
+@media(max-width: $mobile-breakpoint) {
+    @import '../../app/_scss/mobile';
+
+    section#whisky {
+        article {
+            height: unset;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $light;
+
+            h2 {
+                margin-block: 1rem;
+            }
+            p {
+                max-width: unset;
+
+                &:nth-of-type(2) {
+                    display: none;
+                }
+            }
+        }
+        .scotland {
+            display: none;
+        }
+    }
+}

@@ -104,9 +104,19 @@
     }
 }
 
+
 @media(max-width: $mobile-breakpoint) {
-    .hexagon-gallery,
-    table {
-        display: none;
+    .hexagons {
+        //display: none;
+        padding-bottom: 50px;
+        margin: auto auto 80px;
+        width: 400px;
+        z-index: -1;
+        position: fixed !important;
+        top: 0;
+        left: 20vw;
+        transform: perspective(1000px) rotateY(-20deg) rotateX(40deg);
+        animation: unset;
+        animation-timeline: unset;
     }
 }

@@ -62,8 +62,9 @@ footer.component {
 	}
 }
 
+
 @media(max-width: $mobile-breakpoint) {
-	#footer .copy {
+	footer.component {
 		display: none;
 	}
 }

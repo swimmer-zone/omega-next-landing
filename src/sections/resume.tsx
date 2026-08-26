@@ -247,19 +247,19 @@ export default function Resume(): JSX.Element {
                 </p>
                 <ul>
                     <li>
-                        <a href="https://playground.ome.gs">Playground</a> the previous version of my website, I kept it
+                        <a href="https://playground.ome.gs">Playground</a>: the previous version of my website, I kept it
                         online so it can serve as my playground for testing new features and to serve as my creative
                         outlet.
                     </li>
                     <li>
-                        <a href="https://weerbaar.ome.gs">Weerbaar Worden</a> a website that I made for a friend,
+                        <a href="https://weerbaar.ome.gs">Weerbaar Worden</a>: a website that I made for a friend,
                         which was meant to be child friendly.
                     </li>
                     <li>
-                        <a href="https://blackhole.ome.gs">Black Hole</a> being a music project that I have had with a
+                        <a href="https://blackhole.ome.gs">Black Hole</a>: being a music project that I have had with a
                         couple of friends.
                     </li>
-                    <li><a href="https://index.ome.gs">Index is band</a> website of a couple of friends.</li>
+                    <li><a href="https://index.ome.gs">Index</a>: a band website of another couple of friends.</li>
                 </ul>
             </div>
             <Timeline/>

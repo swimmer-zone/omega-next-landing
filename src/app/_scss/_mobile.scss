@@ -1,0 +1,37 @@
+@use '_variables' as *;
+
+header,
+section#music,
+section#travels,
+section#whisky,
+section#diy,
+section#resume,
+footer {
+    position: unset;
+    background: none;
+    height: fit-content !important;
+    scroll-snap-align: unset;
+
+    * {
+        position: unset !important;
+    }
+    article {
+        width: 90%;
+        margin-inline: auto;
+        z-index: unset;
+
+        h2 {
+            margin-block: 1rem;
+        }
+        p {
+            width: 100%;
+        }
+    }
+}
+//header { display: none;}
+//section#music { display: none;}
+//section#travels { display: none;}
+//section#whisky { display: none;}
+//section#diy { display: none;}
+//section#resume { display: none;}
+//footer#contact { display: none;}

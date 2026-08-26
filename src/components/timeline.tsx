@@ -3,6 +3,8 @@
 import React, { JSX } from 'react';
 import Image from "next/image";
 
+import './_scss/timeline.scss';
+
 export default function Timeline(): JSX.Element {
     return (
         <div className="timeline">

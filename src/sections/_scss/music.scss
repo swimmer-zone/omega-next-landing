@@ -85,3 +85,47 @@ section#music {
         }
     }
 }
+
+
+@media(max-width: $mobile-breakpoint) {
+    @import '../../app/_scss/mobile';
+
+    section#music {
+        display: block;
+        margin-inline: 1rem;
+
+        h2 {
+            visibility: hidden;
+            position: relative !important;
+            margin-block: 1rem;
+
+            &:after {
+                visibility: visible;
+                position: absolute !important;
+                top: 0;
+                left: 0;
+                content: "Music";
+            }
+        }
+        article {
+            margin-bottom: 1rem;
+
+            &.no-album {
+                border-bottom: 1px solid $light;
+                margin-inline: 0;
+            }
+            ul {
+                width: 100%;
+            }
+            li {
+                margin-left: -60px;
+                width: calc(100% + 50px);
+            }
+        }
+        p,
+        p > a {
+            font-size: 1.2rem;
+            width: 90%;
+        }
+    }
+}

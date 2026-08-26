@@ -1,15 +1,14 @@
-$purple: #6c6eec;
-$purple-dark: #5c5edc;
-$dark: #4a4b50;
-$darker: #222222;
-$darkest: #111111;
-$quotes: #5c5d62;
-$modal: #6a6b70;
-$code: #aaaaaa;
-$light: #dddddd;
-$lighter: #eeeeee;
-$white: #ffffff;
-$black: #000000;
-$yellow: #ffc917;
+$black:       hsl(  0,   0%,   0%); // #000000
+$darkest:     hsl(  0,   0%,   7%); // #111111
+$darker:      hsl(  0,   0%,  13%); // #222222
+$dark:        hsl(  0,   0%,  26%); // #444444
+$code:        hsl(  0,   0%,  67%); // #aaaaaa
+$light:       hsl(  0,   0%,  87%); // #dddddd
+$lighter:     hsl(  0,   0%,  93%); // #eeeeee
+$white:       hsl(  0,   0%, 100%); // #ffffff
+
+$purple:      hsl(239,  77%,  67%); // #6c6eec
+
+$yellow:      hsl( 46, 100%,  55%); // #ffc917
 
 $mobile-breakpoint: 800px;

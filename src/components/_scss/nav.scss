@@ -78,3 +78,10 @@ nav:not(.toc) {
         }
     }
 }
+
+
+@media(max-width: $mobile-breakpoint) {
+    nav:not(.toc) {
+        display: none;
+    }
+}
