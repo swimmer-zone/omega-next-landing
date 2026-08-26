@@ -59,7 +59,7 @@ export default async function Archive(): Promise<JSX.Element> {
             <ul>
                 {tutorials.map((tutorial: Blog, index: number) => (
                     <li key={index}>
-                        <Link href={'tutorials/' + tutorial.slug} title={tutorial.posted}>
+                        <Link href={'/tutorials/' + tutorial.slug} title={tutorial.posted}>
                             {tutorial.title}
                         </Link>
                         {tutorial.description}
@@ -70,7 +70,7 @@ export default async function Archive(): Promise<JSX.Element> {
             <p>
                 My bookmarks are too much to all keep them stored in my browser and most of them are also for sharing,
                 here is a short list of some resources that I use on a daily basis and you can
-                also <a href="downloads/bookmarks.html" download>download my full collection</a> as a file, ready to be
+                also <a href="/downloads/bookmarks.html" download>download my full collection</a> as a file, ready to be
                 imported in your browser.
             </p>
             <ul>
@@ -101,7 +101,7 @@ export default async function Archive(): Promise<JSX.Element> {
             <ul>
                 {blogs.map((blog: Blog, index: number) => (
                     <li key={index}>
-                        <Link href={'blog/' + blog.slug} title={blog.posted}>
+                        <Link href={'/blog/' + blog.slug} title={blog.posted}>
                             {blog.title}
                         </Link>
                         {blog.description}

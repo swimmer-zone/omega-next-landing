@@ -40,7 +40,7 @@ export default async function Travels(): Promise<JSX.Element> {
                 images, the total amount of images is currently {totalImages}.
             </p>
             {travels.map((travel: Blog, index: number) => (
-                <Link key={index} href={'travels/' + travel.slug} className="banner">
+                <Link key={index} href={'/travels/' + travel.slug} className="banner">
                     <h2>{travel.title}</h2>
                 </Link>)
             )}

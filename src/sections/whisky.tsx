@@ -6,14 +6,6 @@ import Link from "next/link";
 
 export default function Whisky(): JSX.Element {
     const [activeRegion, setActiveRegion] = useState<string | null>(null);
-    const regions = [
-        {'key': 'highland', 'value': 'The Highlands'},
-        {'key': 'speyside', 'value': 'Speyside'},
-        {'key': 'lowland', 'value': 'The Lowlands'},
-        {'key': 'campbeltown', 'value': 'Campbeltown'},
-        {'key': 'islay', 'value': 'Islay'},
-        {'key': 'islands', 'value': 'The Islands'},
-    ];
 
     return (<section id="whisky">
         <svg className="scotland" xmlns="http://www.w3.org/2000/svg" width="700" height="565" version="1.0">
