@@ -3,7 +3,7 @@
 I'm a minimalist; throughout the years everything has shrunk, including my website. I'm hosting my tracks myself again,
 after some issues with the SoundCloud API. You can still find my music there though. The other half are blog posts, my
 portfolio and a couple of my favorite resources. Please use the social media buttons to contact me about my music,
-blogs or any web-related topic. Of course you could also e-mail me on [info@swimmer.zone](mailto:info@swimmer.zone).
+blogs or any web-related topic.
 
 I've made a lot of websites throughout the years, a couple of which are still live today: [Black Hole](https://blackhole.voyage/) being a
 music project that I've had with a couple of friends. A band website of a couple of friends, called [Index](https://index.swimmer.zone/). And a
@@ -14,11 +14,3 @@ Some resources that I use on a daily basis: [Codrops](https://tympanus.net/codro
 * [Travel Blogs](/travels)
 * [DIY Projects](/diy)
 * [Page](/resume)
-
-
-### Todo
-
-@vercel/analytics
-@vercel/speed-insights
-topojson-simplify
-

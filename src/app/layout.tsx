@@ -1,8 +1,7 @@
 import React, { JSX } from 'react';
 import type { Metadata, Viewport } from 'next';
-// import { Analytics } from '@vercel/analytics/react';
-// import { SpeedInsights } from '@vercel/speed-insights/next';
-import EasterEgg from '@/components/easter-egg';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
     title: 'Ω',
@@ -19,12 +18,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>): JSX.Element {
     return (<html lang="en">
-        <EasterEgg />
         <body>
             {children}
             <div style={{minHeight: '50px'}}>
-                {/*<Analytics/>*/}
-                {/*<SpeedInsights/>*/}
+                <Analytics/>
+                <SpeedInsights/>
             </div>
         </body>
     </html>);
