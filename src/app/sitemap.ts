@@ -51,12 +51,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
         ...diy.map((item) => ({
             url: `${BASE_URL}/diy/${item.slug}`,
-            lastModified: new Date(item.updated_at),
+            lastModified: item.updated_at,
         })),
 
         ...travels.map((item) => ({
             url: `${BASE_URL}/travels/${item.slug}`,
-            lastModified: new Date(item.updated_at),
+            lastModified: item.updated_at,
         })),
     ];
 }
