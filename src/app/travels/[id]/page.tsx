@@ -11,14 +11,27 @@ import type { Blog } from '@/types/all';
 
 import '../../_scss/_page.scss';
 
-export const metadata: Metadata = {
-    title: 'Ωmega - Travels',
-    description: '',
-};
-
 type Props = {
     params: Promise<{ id: string }>;
 };
+
+export async function generateMetadata(
+    { params }: Props
+): Promise<Metadata> {
+    const { id } = await params;
+    const travel = await getTravel(id);
+
+    if (!travel) {
+        return {
+            title: 'Ωmega - Travels',
+        };
+    }
+
+    return {
+        title: `Ωmega - ${travel.title}`,
+        description: travel.subtitle ?? '',
+    };
+}
 
 async function getTravel(id: string): Promise<Blog | null> {
     const response = await fetch(`${API_URL}/travels/${id}`, {

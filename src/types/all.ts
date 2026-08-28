@@ -3,7 +3,7 @@ export type Blog = {
     slug: string;
     images: number;
     posted: string;
-    description: string;
+    subtitle: string;
     galleries: Gallery[];
     body: string;
     published_at: string;
