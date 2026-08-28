@@ -13,7 +13,7 @@ export default function DIY(): JSX.Element {
                 actually touch.
             </p>
             <p>
-                One of my bigger projects was this <Link href="/diy/cabinet">hexagonal book cabinet</Link>. It started
+                One of my bigger projects was this <Link href="/diy/cabinet">hexagonal cabinet</Link>. It started
                 as a fairly simple idea and turned into considerably more measuring, cutting and figuring things out
                 than I had anticipated. On this page you can find a summary
                 of my <Link href="/diy/casemod">other diy projects</Link>.
