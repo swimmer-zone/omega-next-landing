@@ -9,6 +9,8 @@ export type Blog = {
     published_at: string;
     panorama: string;
     image_count?: number | null;
+    created_at: string;
+    updated_at: string;
 };
 
 export type City = {
