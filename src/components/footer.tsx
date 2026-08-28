@@ -1,10 +1,14 @@
 import React, { JSX } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import packageJson from '../../package.json';
+
 import { API_URL, STORAGE_URL } from '@/lib/api';
+
 import type { Social } from '@/types/all';
+
 import './_scss/footer.scss';
+
+import packageJson from '../../package.json';
 
 async function getSocials(): Promise<Social[] | null> {
     const response = await fetch(`${API_URL}/social`, {

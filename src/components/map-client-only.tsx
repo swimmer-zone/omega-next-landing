@@ -2,6 +2,7 @@
 
 import React, { JSX } from 'react';
 import dynamic from 'next/dynamic';
+
 import type { City, Country } from '@/types/all';
 
 const MapClient = dynamic(() => import('./map-client'), {

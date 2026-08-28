@@ -1,8 +1,10 @@
 import React, { JSX } from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
+
 import Footer from '@/components/footer';
 import Rating from '@/components/rating';
+
 import type { Tasting } from '@/types/all';
 
 import '../_scss/_page.scss';

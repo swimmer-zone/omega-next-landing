@@ -2,7 +2,9 @@
 
 import React, { JSX } from 'react';
 import Image from 'next/image';
+
 import Hexagons from '@/components/hexagons';
+
 import './_scss/header.scss';
 
 export default function Header(): JSX.Element {

@@ -3,7 +3,9 @@
 import React, { JSX } from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
+
 import Timeline from '@/components/timeline';
+
 import './_scss/resume.scss';
 
 const skills = [

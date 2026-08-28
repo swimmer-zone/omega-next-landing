@@ -12,6 +12,7 @@ import {
     Longitude,
     Marker,
 } from '@vnedyalk0v/react19-simple-maps';
+
 import type { City, Country, RotationAngles } from '@/types/all';
 
 import countries from '../json/countries.json';

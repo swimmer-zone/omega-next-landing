@@ -1,6 +1,8 @@
 import React from "react";
+
 import TracksClient from '@/components/tracks-client';
 import { API_URL } from '@/lib/api';
+
 import type { Section } from '@/types/all';
 
 type Props = {

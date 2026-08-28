@@ -1,8 +1,9 @@
 'use client';
 
 import React, { JSX, useState } from 'react';
+import Link from 'next/link';
+
 import './_scss/whisky.scss';
-import Link from "next/link";
 
 export default function Whisky(): JSX.Element {
     const [activeRegion, setActiveRegion] = useState<string | null>(null);

@@ -1,8 +1,11 @@
 import React, { JSX } from 'react';
 import Link from 'next/link';
-import { API_URL } from '@/lib/api';
-import type { Blog } from '@/types/all';
+
 import Map from '@/components/map';
+import { API_URL } from '@/lib/api';
+
+import type { Blog } from '@/types/all';
+
 import './_scss/travels.scss';
 
 async function getTravels(): Promise<Blog[] | null> {

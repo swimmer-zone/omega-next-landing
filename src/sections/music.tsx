@@ -1,5 +1,7 @@
 import React, { JSX } from 'react';
+
 import Tracks from '@/components/tracks';
+
 import './_scss/music.scss';
 
 export default function Music(): JSX.Element {

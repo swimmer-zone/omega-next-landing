@@ -1,7 +1,10 @@
 import React, { JSX } from 'react';
+
 import MapClientOnly from './map-client-only';
 import { API_URL } from '@/lib/api';
+
 import type { City, Country } from '@/types/all';
+
 import './_scss/map.scss';
 
 async function getCities(): Promise<City[] | null> {
