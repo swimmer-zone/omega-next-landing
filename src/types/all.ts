@@ -36,10 +36,6 @@ export type Heading = {
     id: string;
 };
 
-export type Intro = {
-    content: string;
-};
-
 export type Section = {
     id: number;
     title: string;

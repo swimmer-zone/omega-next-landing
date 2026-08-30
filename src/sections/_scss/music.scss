@@ -40,7 +40,7 @@ section#music {
             background: none;
             pointer-events: all;
             text-decoration: underline;
-            text-decoration-color: #ffc917aa;
+            text-decoration-color: hsl(from #{$yellow} h s l / 75%);
             text-underline-offset: 4px;
             text-decoration-style: dotted;
 

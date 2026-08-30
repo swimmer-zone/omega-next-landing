@@ -1,26 +1,22 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
+import Image from 'next/image';
 import { Metadata } from 'next';
+
 import Hexagons from '@/components/hexagons';
+
 import './_scss/not-found.scss';
 
 export const metadata: Metadata = {
-    title: 'Ω - 404',
+    title: 'ΩMG - 404',
     description: '404 - Not found',
 };
 
 export default function NotFound(): JSX.Element {
-    return (<main className="not-found-page">
-        <div className="content-column">
-            <div className="error">
-                <h1>
-                    <span>4</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" id="logo" viewBox="0 0 250 250">
-                        <path fill="#6c6eec88" stroke="#6c6eec" strokeWidth="3" className="animate" d="M07,185 l1 52 h87 l-3-50.308 c-12.252-4.5712-21.978-13.473-29.176-26.707 c-7.1983-13.234-10.88-31.711-11.045-55.43 c0.27163-25.712 6.3213-46.46 18.14-62.239 c11.817-15.781 27.758-23.895 47.822-24.345 c8.7311-0.2199 18.079 2.1718 28.046 7.1892 c9.9638 5.0175 18.531 14.005 25.697 26.963 c7.1672 12.957 10.918 31.234 11.255 54.827 c0 22.061-3.1108 39.714-9.4916 52.961 c-6.3821 13.248-16.303 22.174-29.763 26.78 l-4.1832 50.308 h87.519 l1.9312-52.362 h-7.7222 c0 6.417-1.6634 12.064-5.1481 16.941 c-3.486 4.8765-10.028 7.4428-19.627 7.7002 h-43.117 l1.6091-14.716 c20.291-6.3381 36.098-17.447 47.421-33.326 c11.321-15.878 17.073-35.456 17.254-58.735 c-0.54327-29.748-10.038-53.236-28.494-70.466 c-18.457-17.228-42.637-26.024-72.539-26.386 c-31.841 0.73729-56.923 10.414-75.246 29.012 c-18.324 18.599-27.67 41.669-28.04 69.208 c0.31044 18.682 4.0267 34.419 11.129 47.207 c7.1039 12.79 15.699 22.773 25.788 29.951 c10.089 7.1776 19.77 11.689 29.044 13.534 l0.32338 14.716 h-42.151 c-8.7544 0-15.136-2.1174-19.145-6.289 c-4.0085-4.1702-6.2075-10.288-6.5955-18.352 z"/>
-                    </svg>
-                    <span>4</span>
-                </h1>
-            </div>
-            <Hexagons />
+    return (<main>
+        <Hexagons/>
+        <div className="error">
+            <Image src="/vector/omg.svg" alt="404" height="250" width="480" />
+            <h1>404</h1>
         </div>
     </main>);
 }

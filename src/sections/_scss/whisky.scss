@@ -32,10 +32,15 @@ section#whisky {
         path,
         g {
             transition: fill 200ms ease;
+            stroke: $purple;
+            fill: $darker;
 
             &.active {
-                fill: #6c6eec;
+                fill: $purple;
             }
+        }
+        g.active path {
+            fill: $purple;
         }
     }
 }

@@ -7,7 +7,13 @@ footer.component {
     width: 100vw;
     height: 60vh;
 	z-index: 999;
-    background: linear-gradient(to bottom, #11111100, #11111122, #11111188, $darkest);
+    background: linear-gradient(
+		to bottom,
+		hsl(from #{$darkest} h s l / 0%),
+		hsl(from #{$darkest} h s l / 12.5%),
+		hsl(from #{$darkest} h s l / 50%),
+		$darkest
+	);
 	pointer-events: none;
 
 	& > a {

@@ -9,7 +9,7 @@ li:has(.playing) {
 .rhap_container {
     width: 480px;
     padding: 1rem 1.25rem;
-    background: #11111188;
+    background: hsl(from #{$darkest} h s l / 50%);
     color: $purple;
     box-shadow: none;
     border: 1px solid $darkest;
@@ -24,7 +24,7 @@ li:has(.playing) {
             margin-bottom: 0.75rem;
 
             .rhap_time {
-                color: #888;
+                color: $code;
                 font-size: 0.75rem;
                 font-variant-numeric: tabular-nums;
             }
@@ -38,7 +38,7 @@ li:has(.playing) {
                     background: $dark;
 
                     .rhap_progress-filled {
-                        background: #fff;
+                        background: $white;
                         border-radius: 0;
                     }
                     .rhap_progress-bar-show-download {
@@ -84,7 +84,7 @@ li:has(.playing) {
                 color: $purple;
             }
             .rhap_button-clear:focus-visible {
-                outline: 1px solid #fff;
+                outline: 1px solid $white;
                 outline-offset: 3px;
             }
             .rhap_skip-button,

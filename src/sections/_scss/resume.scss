@@ -33,7 +33,7 @@ section#resume {
         position: sticky;
         top: 50vh;
         height: 50vh;
-        background: linear-gradient(to bottom, #00000000 0%, #000000ff 100%);
+        background: linear-gradient(to bottom, hsl(from #{$black} h s l / 0%) 0%, $black 100%);
         pointer-events: none;
 
         ul {
@@ -74,20 +74,6 @@ section#resume {
         }
         .techniques {
             display: none;
-        //    position: sticky;
-        //    top: 50vh;
-        //    height: 50vh;
-        //    background: linear-gradient(to bottom, #00000000 0%, #000000ff 100%);
-        //    pointer-events: none;
-        //
-        //    ul {
-        //        pointer-events: all;
-        //        display: flex;
-        //        gap: 2vw;
-        //        list-style: none;
-        //        padding: 0;
-        //        margin-top: 40vh;
-        //    }
         }
     }
 }

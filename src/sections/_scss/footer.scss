@@ -67,10 +67,10 @@ footer {
                 cursor: pointer;
                 transition: all 0.2s ease-in-out;
                 width: 320px;
-                box-shadow: 0 0 20px #ffc91788;
+                box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 50%);
 
                 &:hover {
-                    box-shadow: 0 0 30px #ffc917dd;
+                    box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 87.5%);
                 }
             }
         }

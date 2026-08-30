@@ -31,7 +31,7 @@ section#travels {
             transition: all 1s;
             width: 400px;
             height: 50px;
-            background-color: #222222aa;
+            background-color: hsl(from #{$darker} h s l / 75%);
             opacity: 0.8;
             pointer-events: all;
 
@@ -39,11 +39,11 @@ section#travels {
                 font-size: 1.5rem;
                 margin-block: 0;
                 transition: all 0.5s;
-                color: #ffffff;
+                color: $white;
                 text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
             }
             &:hover {
-                background-color: #222222ee;
+                background-color: hsl(from #{$darker} h s l / 92%);
             }
         }
         h2.travels {
