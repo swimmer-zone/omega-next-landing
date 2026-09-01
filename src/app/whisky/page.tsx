@@ -39,7 +39,7 @@ async function getTastings(): Promise<Tasting[] | null> {
 export default async function Whisky(): Promise<JSX.Element> {
     const tastings = await getTastings();
 
-    const theme = 'light';//document.documentElement.style.colorScheme;
+    const theme = 'dark';//document.documentElement.style.colorScheme;
 
     if (!tastings) {
         return notFound();
