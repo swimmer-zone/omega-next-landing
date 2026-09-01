@@ -10,7 +10,7 @@
 
     padding: 0;
     margin: 10px 10px 60px;
-    background-color: $darkest;
+    background-color: light-dark($lightest, $darkest);
     border: 1px solid $purple;
 
     &:first-of-type {
@@ -24,7 +24,7 @@
         h2 {
             padding: 0 4px;
             margin-top: -40px;
-            background-color: $darkest;
+            background-color: light-dark($lightest, $darkest);
             width: fit-content;
             color: $purple;
         }

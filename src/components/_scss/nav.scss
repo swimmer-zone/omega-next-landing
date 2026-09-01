@@ -5,18 +5,19 @@ nav:not(.toc) {
     top: 20vh;
     right: 2vw;
     z-index: 100;
-    background-color: $darker;
-    border: 1px solid $dark;
+    background-color: light-dark($lighter, $darker);
+    border: 1px solid light-dark($light, $dark);
     padding: 0.5rem;
     border-radius: 50px;
     margin-top: -50px;
     box-shadow:
-            0 0 10px rgba(0, 0, 0, 0.5),
-            -2px -2px 10px rgba(0, 0, 0, 0.1),
-            2px 2px 10px rgba(0, 0, 0, 0.1),
-            inset 0 0 10px rgba(0, 0, 0, 0.9),
-             -2px -2px 10px rgba(0, 0, 0, 0.1),
-             2px 2px 10px rgba(0, 0, 0, 0.1);
+        0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%)),
+        -2px -2px 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 10%)),
+        2px 2px 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 10%)),
+        inset 0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 90%)),
+         -2px -2px 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 10%)),
+         2px 2px 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 10%)
+    );
 
     * {
         outline: none;

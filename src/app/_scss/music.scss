@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(120deg, $darker 0%, $darkest 40%, $black 50%, $darkest 60%, $darker 100%) fixed;
+    background: linear-gradient(120deg, light-dark($lighter, $darker) 0%, light-dark($lightest, $darkest) 40%, light-dark($white, $black) 50%, light-dark($lightest, $darkest) 60%, light-dark($lighter, $darker) 100%) fixed;
     background-size: cover;
     width: 100vw;
 
@@ -21,7 +21,7 @@
         border: none;
 
         &.album {
-            background-color: $darker;
+            background-color: light-dark($lighter, $darker);
             border-radius: 1rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -89,7 +89,7 @@
             width: 90%;
 
             &.album {
-                background-color: $darker;
+                background-color: light-dark($lighter, $darker);
                 border-radius: 1rem;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             }

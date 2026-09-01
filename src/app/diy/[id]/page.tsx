@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -6,6 +6,7 @@ import BlogClient from '@/components/blog-client';
 import Footer from '@/components/footer';
 import { API_URL } from '@/lib/api';
 
+import Toggle from "@/components/toggle";
 import type { Blog, Gallery } from '@/types/all';
 
 import '../../_scss/_page.scss';
@@ -56,6 +57,7 @@ export default async function DIYPage({ params }: Props): Promise<JSX.Element> {
 
     return (
         <main>
+            <Toggle/>
             <div className="content-column">
                 <h1>{diy.title}</h1>
                 <em>Published at: {new Intl.DateTimeFormat('en-GB', {

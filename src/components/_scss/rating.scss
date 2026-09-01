@@ -18,8 +18,8 @@
 	}
 	.stars-base {
 		.star {
-			color: $dark;
-			fill: $dark;
+			color: light-dark($light, $dark);
+			fill: light-dark($light, $dark);
 		}
 	}
 	.stars-fill {

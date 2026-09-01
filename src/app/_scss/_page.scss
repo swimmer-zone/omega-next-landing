@@ -1,11 +1,16 @@
 @use '_variables' as *;
 
+:root {
+    color-scheme: light dark;
+}
+
 html {
+    color-scheme: light dark;
     scroll-snap-type: y proximity;
     font-family: 'Afacad', sans-serif;
 }
 body {
-    background-color: $darkest;
+    background-color: light-dark($lightest, $darkest);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -16,7 +21,7 @@ button {
     scroll-behavior: smooth;
     font-family: 'Afacad', sans-serif;
     font-size: 1.2rem;
-    color: $lighter;
+    color: light-dark($darkest, $lightest);
 }
 h1 {
     font-size: 5rem;
@@ -58,13 +63,13 @@ footer {
     }
 }
 a {
-    text-decoration: underline solid $yellow;
+    text-decoration: underline solid light-dark($purple, $yellow);
     text-underline-offset: 4px;
     text-decoration-thickness: 1px;
     transition: text-underline-offset 5s ease-in-out;
 
     &:hover {
-        text-decoration: underline solid $yellow;
+        text-decoration: underline solid light-dark($purple, $yellow);
         transition: all .3s ease-in-out;
         text-underline-offset: 8px;
     }
@@ -76,15 +81,14 @@ a {
         scroll-snap-type: unset;
     }
     body {
-        background-color: $darkest;
+        background-color: light-dark($lightest, $darkest);
         margin: 0;
         padding: 0;
-        font-family: 'Afacad', sans-serif;
     }
     *,
     button {
         font-size: 1.2rem;
-        color: $lighter;
+        color: light-dark($darkest, $lightest);
     }
     h1 {
         font-size: 3rem;

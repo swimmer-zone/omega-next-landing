@@ -1,18 +1,21 @@
 @use '../../app/_scss/variables' as *;
 
 li:has(.playing) {
-    background-color: $darkest;
-    border: 1px solid $darker;
+    background-color: light-dark($lightest, $darkest);
+    border: 1px solid light-dark($lighter, $darker);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .rhap_container {
     width: 480px;
     padding: 1rem 1.25rem;
-    background: hsl(from #{$darkest} h s l / 50%);
+    background: light-dark(
+        hsl(from #{$lightest} h s l / 50%),
+        hsl(from #{$darkest} h s l / 50%)
+    );
     color: $purple;
     box-shadow: none;
-    border: 1px solid $darkest;
+    border: 1px solid light-dark($lightest, $darkest);
     border-radius: 0;
     font-family: inherit;
     outline: none !important;
@@ -35,17 +38,17 @@ li:has(.playing) {
                 .rhap_progress-bar {
                     height: 2px;
                     border-radius: 0;
-                    background: $dark;
+                    background: light-dark($light, $dark);
 
                     .rhap_progress-filled {
-                        background: $white;
+                        background: light-dark($black, $white);
                         border-radius: 0;
                     }
                     .rhap_progress-bar-show-download {
-                        background: $dark;
+                        background: light-dark($light, $dark);
                     }
                     .rhap_download-progress {
-                        background: $dark;
+                        background: light-dark($light, $dark);
                     }
                     .rhap_progress-indicator {
                         width: 16px;
@@ -84,7 +87,7 @@ li:has(.playing) {
                 color: $purple;
             }
             .rhap_button-clear:focus-visible {
-                outline: 1px solid $white;
+                outline: 1px solid light-dark($black, $white);
                 outline-offset: 3px;
             }
             .rhap_skip-button,
@@ -116,7 +119,7 @@ li:has(.playing) {
             }
             .rhap_volume-bar {
                 height: 2px;
-                background: $dark;
+                background: light-dark($light, $dark);
             }
             .rhap_volume-indicator {
                 width: 16px;
@@ -133,7 +136,7 @@ li:has(.playing) {
     .rhap_container {
         width: 100%;
         margin-bottom: 2rem;
-        background-color: $darker;
+        background-color: light-dark($lighter, $darker);
         padding: 0.75rem 1.5rem;
 
         .rhap_main {

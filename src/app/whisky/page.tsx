@@ -1,17 +1,17 @@
 import React, { JSX } from 'react';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
 import Footer from '@/components/footer';
 import Rating from '@/components/rating';
+import Toggle from "@/components/toggle";
+import { API_URL } from '@/lib/api';
 
 import type { Tasting } from '@/types/all';
 
 import '../_scss/_page.scss';
 import '../_scss/whisky.scss';
-
-import { API_URL } from '@/lib/api';
-import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
     title: 'Ωmega - Whisky',
@@ -39,11 +39,14 @@ async function getTastings(): Promise<Tasting[] | null> {
 export default async function Whisky(): Promise<JSX.Element> {
     const tastings = await getTastings();
 
+    const theme = 'light';//document.documentElement.style.colorScheme;
+
     if (!tastings) {
         return notFound();
     }
     if (tastings.length === 0) {
         return (<main>
+            <Toggle/>
             <div className="content-column">
                 <h1>Whisky</h1>
                 <p>No tastings available</p>
@@ -53,6 +56,7 @@ export default async function Whisky(): Promise<JSX.Element> {
     }
 
     return (<main>
+        <Toggle/>
         <div className="content-column">
             <h1>My Tastings</h1>
             <p>
@@ -117,7 +121,7 @@ export default async function Whisky(): Promise<JSX.Element> {
                             </>}
                         </div>
                         {tasting.region && <div className="whisky-map">
-                            <Image src={"/vector/whisky/" + tasting.region.toLowerCase() + ".svg"} alt="" height={200} width={200}/>
+                            <Image src={"/vector/whisky/" + (theme === 'light' ? 'light/' : '') + tasting.region.toLowerCase() + ".svg"} alt="" height={200} width={200}/>
                         </div>}
                         {!tasting.region && <div className="whisky-map"></div>}
                     </div>

@@ -28,6 +28,8 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
     );
     const [hoveredCity, setHoveredCity] = useState<string | null>(null);
 
+    const theme = document.documentElement.style.colorScheme;
+
     let i: number = 0;
 
     return (
@@ -37,7 +39,7 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                 scale: 350,
             }}
         >
-            <Graticule stroke="#111111" />
+            <Graticule stroke={theme === 'light' ? '#eeeeee'  : '#111111'} />
 
             <Geographies geography={countries}>
                 {({ geographies }) => (
@@ -57,16 +59,16 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                                         default: {
                                             fill: highlighted
                                                 ? '#6c6eecaa'
-                                                : '#222222aa',
-                                            stroke: '#000000',
+                                                : theme === 'light' ? '#ddddddaa' : '#222222aa',
+                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
                                         },
                                         hover: {
                                             fill: '#6c6eec44',
-                                            stroke: '#000000',
+                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
                                         },
                                         pressed: {
                                             fill: '#6c6eec88',
-                                            stroke: '#000000',
+                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
                                         },
                                     }}
                                 />
@@ -79,7 +81,7 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
             {visitedCities.map(({ name, latitude, longitude, link }) => {
                 const label = (
                     <text
-                        fill={link ? '#dddddd' : '#bbbbbb'}
+                        fill={link ? theme === 'light' ? '#222222' : '#dddddd' : theme === 'light' ? '#444444' : '#bbbbbb'}
                         style={{ cursor: link ? 'pointer' : 'default', fontSize: '8px' }}
                     >
                         {name}

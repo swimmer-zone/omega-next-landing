@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 import { Metadata } from 'next';
 
 import Header from '@/sections/header';
@@ -9,6 +9,7 @@ import DIY from '@/sections/diy';
 import Resume from '@/sections/resume';
 import Footer  from '@/sections/footer';
 import Nav from '@/components/nav';
+import Toggle from '@/components/toggle';
 
 import './_scss/_page.scss';
 import './_scss/landing.scss';
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
 export default async function Home(): Promise<JSX.Element> {
     return (<main className="landing-page">
         <Header/>
+        <Toggle/>
         <Nav/>
         <Music/>
         <Travels/>

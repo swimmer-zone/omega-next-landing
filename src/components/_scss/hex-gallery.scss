@@ -90,7 +90,7 @@ table {
             padding: 4px;
 
             &:not(:first-of-type) {
-                background-color: $dark;
+                background-color: light-dark($light, $dark);
             }
             &.right {
                 text-align: right;

@@ -16,7 +16,7 @@
         padding-bottom: 2.25em;
 
         &:not(:last-child):before {
-            background-color: $light;
+            background-color: light-dark($darker, $lighter);
             content: "";
             display: block;
             position: absolute;
@@ -39,7 +39,7 @@
                 position: relative;
                 width: 0.75em;
                 height: 0.75em;
-                color: $light;
+                color: light-dark($darker, $lighter);
             }
             span:not(.dot) {
                 width: 100%;
@@ -47,12 +47,12 @@
                 strong {
                     font-size: 1.2em;
                     line-height: 1.333;
-                    color: $light;
+                    color: light-dark($darker, $lighter);
                 }
                 time {
                     font-size: 0.833em;
                     line-height: 2.4;
-                    color: $light;
+                    color: light-dark($darker, $lighter);
                 }
             }
         }
@@ -60,7 +60,7 @@
             opacity: 1;
             visibility: visible;
             transition-delay: $trans-dur, 0s;
-            background-color: $darker;
+            background-color: light-dark($lighter, $darker);
             padding: 0.5em 0.75em;
             width: 80%;
             border-radius: 0.375em;

@@ -1,7 +1,14 @@
 @use '../../app/_scss/variables' as *;
 
 section#diy {
-    background: linear-gradient(120deg, $darker 0%, $darkest 40%, $black 50%, $darkest 60%, $darker 100%);
+    background: linear-gradient(
+        120deg,
+        light-dark($lighter, $darker) 0%,
+        light-dark($lightest, $darkest) 40%,
+        light-dark($white, $black) 50%,
+        light-dark($lightest, $darkest) 60%,
+        light-dark($lighter, $darker) 100%
+    );
     position: relative;
     display: flex;
     align-items: start;
@@ -58,7 +65,7 @@ section#diy {
     section#diy {
         article {
             padding-bottom: 2rem;
-            border-bottom: 1px solid $light;
+            border-bottom: 1px solid light-dark($darker, $lighter);
         }
         .diy-images {
             display: flex;

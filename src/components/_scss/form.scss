@@ -1,7 +1,89 @@
-.honeypot {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
+@use '../../app/_scss/variables' as *;
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50vw;
+    border: none;
+    background-color: light-dark($lightest, $darkest);
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%));
+    background-image: url('/images/me.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 360px;
+    transform: perspective(1000px) rotateY(8deg) rotateX(4deg);
+
+    &:has(*:focus) {
+        background-image: url('/images/me-hover.png');
+        transition: all 0.5s ease-in-out;
+    }
+    input,
+    textarea {
+        background-color: light-dark($lighter, $darker);
+        border: 1px solid light-dark($lightest, $darkest);
+        color: light-dark($darkest, $lightest);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        box-shadow: inset 0 0 10px light-dark(hsl(from #{$light} h s l / 50%), hsl(from #{$black} h s l / 50%));
+        width: calc(100% - 400px);
+
+        &:focus {
+            outline: 2px solid light-dark($lighter, $darker);
+        }
+    }
+    textarea {
+        height: 6rem;
+    }
+    button {
+        background-color: $yellow;
+        border: 1px solid light-dark($lighter, $darker);
+        font-weight: bold;
+        color: $darker;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        width: 320px;
+        box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 50%);
+
+        &:hover {
+            box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 87.5%);
+        }
+    }
+    .honeypot {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    fieldset {
+        width: 100%;
+        border: 2px solid $purple;
+        background-size: 120px;
+        transform: unset;
+        margin: 0;
+        box-sizing: border-box;
+
+        input,
+        textarea,
+        button {
+            width: 100% !important;
+            margin-inline: 0;
+            box-sizing: border-box;
+            margin-top: 0;
+        }
+        button {
+            width: 60% !important;
+        }
+    }
 }

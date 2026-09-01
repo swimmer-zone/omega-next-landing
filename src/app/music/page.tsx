@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 
 import Footer from "@/components/footer";
+import Toggle from "@/components/toggle";
 import Tracks from '@/components/tracks';
 
 import '../_scss/_page.scss';
@@ -19,6 +20,7 @@ export default async function Music() {
     }
 
     return (<main className="music-page">
+        <Toggle/>
         <h1>My Music</h1>
         {sections}
         <Footer />

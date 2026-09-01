@@ -9,10 +9,10 @@ footer.component {
 	z-index: 999;
     background: linear-gradient(
 		to bottom,
-		hsl(from #{$darkest} h s l / 0%),
-		hsl(from #{$darkest} h s l / 12.5%),
-		hsl(from #{$darkest} h s l / 50%),
-		$darkest
+		light-dark(hsl(from #{$lightest} h s l / 0%), hsl(from #{$darkest} h s l / 0%)),
+		light-dark(hsl(from #{$lightest} h s l / 12.5%), hsl(from #{$darkest} h s l / 12.5%)),
+		light-dark(hsl(from #{$lightest} h s l / 50%), hsl(from #{$darkest} h s l / 50%)),
+		light-dark($lightest, $darkest)
 	);
 	pointer-events: none;
 

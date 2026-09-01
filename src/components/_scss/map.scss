@@ -1,7 +1,7 @@
 @use '../../app/_scss/variables' as *;
 
 .rsm-svg {
-    background-color: $black;
+    background-color: light-dark($white, $black);
     width: 100vw;
     height: 100vh;
 }

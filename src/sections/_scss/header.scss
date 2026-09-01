@@ -8,13 +8,14 @@ header {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to right, transparent 0%, $darkest 100%);
+        background: linear-gradient(to right, transparent 0%, light-dark($lightest, $darkest) 100%);
         pointer-events: none;
     }
     .logo {
         width: 1400px;
         height: 500px;
         z-index: 1;
+        max-width: 80vw;
     }
     .chevron {
         position: absolute;
@@ -27,6 +28,7 @@ header {
         left: calc(50vw - 170px);
         top: 580px;
         width: 880px;
+        max-width: 50vw;
         z-index: 1;
         font-size: 1.8rem;
 
@@ -63,7 +65,7 @@ header {
             z-index: unset;
             font-size: 1.2rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid $light;
+            border-bottom: 1px solid light-dark($darker, $lighter);
 
             a {
                 font-size: 1.2rem;

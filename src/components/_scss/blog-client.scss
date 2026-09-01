@@ -30,14 +30,14 @@
             transform: scale(1.1);
         }
         &.click {
-            fill: $white;
+            fill: light-dark($black, $white);
         }
     }
 }
 .toc {
     margin: 2rem 0;
     padding: 1rem;
-    border: 1px solid $darkest;
+    border: 1px solid light-dark($lightest, $darkest);
     border-radius: 8px;
 
     ul {

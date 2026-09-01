@@ -111,7 +111,7 @@ section#music {
             margin-bottom: 1rem;
 
             &.no-album {
-                border-bottom: 1px solid $light;
+                border-bottom: 1px solid light-dark($darker, $lighter);
                 margin-inline: 0;
             }
             ul {

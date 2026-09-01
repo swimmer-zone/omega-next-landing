@@ -7,6 +7,7 @@ import Footer from '@/components/footer';
 import Water from '@/components/water';
 import { API_URL } from '@/lib/api';
 
+import Toggle from "@/components/toggle";
 import type { Blog } from '@/types/all';
 
 import '../../_scss/_page.scss';
@@ -57,6 +58,7 @@ export default async function TravelPage({ params }: Props): Promise<JSX.Element
 
     return (
         <main>
+            <Toggle/>
             <div className="content-column">
                 <h1>{travel.title}</h1>
                 <em>Published at: {new Intl.DateTimeFormat('en-GB', {

@@ -1,7 +1,14 @@
 @use '../../app/_scss/variables' as *;
 
 section#resume {
-    background: linear-gradient(60deg, $black 0%, $darkest 40%, $darker 50%, $darkest 60%, $black 100%) fixed;
+    background: linear-gradient(
+        120deg,
+        light-dark($white, $black) 0%,
+        light-dark($lightest, $darkest) 40%,
+        light-dark($lighter, $darker) 50%,
+        light-dark($lightest, $darkest) 60%,
+        light-dark($white, $black) 100%
+    );
     position: relative;
     display: flex;
     flex-direction: column;
@@ -33,7 +40,14 @@ section#resume {
         position: sticky;
         top: 50vh;
         height: 50vh;
-        background: linear-gradient(to bottom, hsl(from #{$black} h s l / 0%) 0%, $black 100%);
+        background: linear-gradient(
+            to bottom,
+            light-dark(
+                hsl(from #{$white} h s l / 0%),
+                hsl(from #{$black} h s l / 0%)
+            ) 0%,
+            light-dark($white, $black) 100%,
+        );
         pointer-events: none;
 
         ul {
@@ -60,7 +74,7 @@ section#resume {
         }
         article {
             padding-bottom: 2rem;
-            border-bottom: 1px solid $light;
+            border-bottom: 1px solid light-dark($darker, $lighter);
             height: unset;
             flex-direction: column;
 
