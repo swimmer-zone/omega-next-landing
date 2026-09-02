@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="logo" viewBox="0 0 700 250">
+<svg xmlns="http://www.w3.org/2000/svg" id="logo" viewBox="0 0 720 250">
     <defs>
         <filter id="dropshadow" width="200%" height="200%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="8" />
@@ -11,20 +11,12 @@
                 <feMergeNode in="SourceGraphic" />
             </feMerge>
         </filter>
-        <linearGradient id="o-grad" gradientUnits="userSpaceOnUse"
-                        x1="0"
-                        y1="125"
-                        x2="700"
-                        y2="125">
+        <linearGradient id="o-grad" gradientUnits="userSpaceOnUse" x1="0" y1="125" x2="700" y2="125">
             <stop offset="0%" stop-color="#ffffff"/>
             <stop offset="100%" stop-color="#6c6eec"/>
             <animateTransform attributeName="gradientTransform" type="rotate" from="0 350 125" to="360 350 125" dur="10s" repeatCount="indefinite"/>
         </linearGradient>
-        <linearGradient id="o-grad-o" gradientUnits="userSpaceOnUse"
-                        x1="0"
-                        y1="125"
-                        x2="700"
-                        y2="125">
+        <linearGradient id="o-grad-o" gradientUnits="userSpaceOnUse" x1="0" y1="125" x2="700" y2="125">
             <stop offset="0%" stop-color="#6c6eecaa"/>
             <stop offset="100%" stop-color="#6c6eec22"/>
             <animateTransform attributeName="gradientTransform" type="rotate" from="0 350 125" to="360 350 125" dur="10s" repeatCount="indefinite"/>
