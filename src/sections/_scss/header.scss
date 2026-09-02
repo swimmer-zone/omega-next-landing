@@ -3,6 +3,8 @@
 header {
     position: relative;
     background: none !important;
+    display: flex;
+    flex-direction: column;
 
     &::after {
         content: "";
@@ -24,13 +26,16 @@ header {
         margin-left: -64px;
     }
     p {
-        position: absolute;
         left: calc(50vw - 170px);
         top: 580px;
         width: 880px;
-        max-width: 50vw;
+        max-width: 90%;
         z-index: 1;
         font-size: 1.8rem;
+
+        @media(min-width: 1700px) {
+            position: absolute;
+        }
 
         a {
             font-size: 1.8rem;

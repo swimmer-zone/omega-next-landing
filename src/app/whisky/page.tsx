@@ -39,8 +39,6 @@ async function getTastings(): Promise<Tasting[] | null> {
 export default async function Whisky(): Promise<JSX.Element> {
     const tastings = await getTastings();
 
-    const theme = 'dark';//document.documentElement.style.colorScheme;
-
     if (!tastings) {
         return notFound();
     }
@@ -121,7 +119,7 @@ export default async function Whisky(): Promise<JSX.Element> {
                             </>}
                         </div>
                         {tasting.region && <div className="whisky-map">
-                            <Image src={"/vector/whisky/" + (theme === 'light' ? 'light/' : '') + tasting.region.toLowerCase() + ".svg"} alt="" height={200} width={200}/>
+                            <Image src={"/vector/whisky/" + tasting.region.toLowerCase() + ".svg"} alt="" height={200} width={200}/>
                         </div>}
                         {!tasting.region && <div className="whisky-map"></div>}
                     </div>
