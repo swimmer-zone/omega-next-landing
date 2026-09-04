@@ -59,6 +59,7 @@ fieldset {
     transition: all 0.2s ease-in-out;
     width: 320px;
     box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 25%);
+    outline: none;
 
     &:hover {
         box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 50%);
@@ -74,6 +75,7 @@ dialog {
     background-color: light-dark($lighter, $darker);
     color: light-dark($dark, $light);
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+    outline: none;
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0.6);
