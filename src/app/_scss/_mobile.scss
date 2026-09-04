@@ -1,15 +1,12 @@
 @use '_variables' as *;
 
 header,
-section#music,
-section#travels,
-section#whisky,
-section#diy,
-section#resume,
+section:is(#music, #travels, #whisky, #diy, #resume),
 footer {
     position: unset;
     background: none;
     height: fit-content !important;
+    min-height: unset;
     scroll-snap-align: unset;
 
     * {
@@ -28,10 +25,3 @@ footer {
         }
     }
 }
-//header { display: none;}
-//section#music { display: none;}
-//section#travels { display: none;}
-//section#whisky { display: none;}
-//section#diy { display: none;}
-//section#resume { display: none;}
-//footer#contact { display: none;}
