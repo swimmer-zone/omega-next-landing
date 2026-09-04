@@ -1,6 +1,7 @@
 @use '../../app/_scss/variables' as *;
 
 .theme-toggle {
+    $border: 4px;
     position: fixed;
     top: 8vh;
     right: 2vw;
@@ -53,7 +54,8 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: $purple;
+        background: light-dark($light, $dark);
+        border: 1px solid light-dark($dark, $light);
         transition: transform 0.3s ease;
     }
     &.dark::before {
