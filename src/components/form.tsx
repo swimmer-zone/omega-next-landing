@@ -74,13 +74,9 @@ export default function Form(): JSX.Element {
             <div>
                 <h2>
                     <span className="icon" aria-hidden="true">{isSuccess ? '✓' : '!'}</span>
-                    {isSuccess ? 'Message sent' : 'Something went wrong'}
+                    {isSuccess ? 'Thanks!' : 'Something went wrong'}
                 </h2>
-                <p>
-                    {isSuccess
-                        ? 'Thanks! Your message has been sent.'
-                        : 'Please try again.'}
-                </p>
+                <p>{isSuccess ? 'Your message has been sent.' : 'Please try again.'}</p>
                 <button onClick={closeDialog}>{isSuccess ? 'Close' : 'Try again'}</button>
             </div>
         </dialog>
