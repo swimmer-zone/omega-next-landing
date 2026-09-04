@@ -27,13 +27,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: `Ωmega - ${travel.title}`,
+        title: 'Ωmega - ' + travel.title,
         description: travel.subtitle ?? '',
     };
 }
 
 async function getTravel(id: string): Promise<Blog | null> {
-    const response = await fetch(`${API_URL}/travels/${id}`, {
+    const response = await fetch(API_URL + '/travels/' + id, {
         next: { revalidate: 300 },
     });
 

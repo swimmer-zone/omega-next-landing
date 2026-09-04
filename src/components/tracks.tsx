@@ -11,7 +11,7 @@ type Props = {
 };
 
 async function getMusic(): Promise<Section[]> {
-    const response = await fetch(`${API_URL}/music`, {
+    const response = await fetch(API_URL + '/music', {
         next: { revalidate: 300 },
     });
 

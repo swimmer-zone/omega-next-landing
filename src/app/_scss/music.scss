@@ -5,7 +5,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(120deg, light-dark($lighter, $darker) 0%, light-dark($lightest, $darkest) 40%, light-dark($white, $black) 50%, light-dark($lightest, $darkest) 60%, light-dark($lighter, $darker) 100%) fixed;
+    background: linear-gradient(
+        120deg,
+        light-dark($lighter, $darker) 0%,
+        light-dark($lightest, $darkest) 40%,
+        light-dark($white, $black) 50%,
+        light-dark($lightest, $darkest) 60%,
+        light-dark($lighter, $darker) 100%
+    ) fixed;
     background-size: cover;
     width: 100vw;
 
@@ -27,6 +34,9 @@
         }
         &:has(.playing) {
             border: 1px solid $purple;
+        }
+        &:has(.loading) {
+            animation: track-loading 1.2s ease-in-out infinite;
         }
         h3 {
             margin-bottom: 0;
@@ -77,6 +87,16 @@
                 content: "♬";
             }
         }
+    }
+}
+
+@keyframes track-loading {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
     }
 }
 

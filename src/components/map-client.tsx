@@ -115,7 +115,7 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                             }}
                         >
                             {link ? (
-                                <Link href={`/travels/${link}`}>
+                                <Link href={'/travels/' + link}>
                                     {label}
                                 </Link>
                             ) : (

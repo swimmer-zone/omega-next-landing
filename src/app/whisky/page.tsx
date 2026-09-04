@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 async function getTastings(): Promise<Tasting[] | null> {
-    const response = await fetch(`${API_URL}/whisky`, {
+    const response = await fetch(API_URL + '/whisky', {
         next: { revalidate: 300 },
     });
 

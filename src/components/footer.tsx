@@ -11,7 +11,7 @@ import './_scss/footer.scss';
 import packageJson from '../../package.json';
 
 async function getSocials(): Promise<Social[] | null> {
-    const response = await fetch(`${API_URL}/social`, {
+    const response = await fetch(API_URL + '/social', {
         next: { revalidate: 300 },
     });
 

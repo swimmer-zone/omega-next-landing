@@ -6,7 +6,7 @@ import type { Social } from '@/types/all';
 import './_scss/footer.scss';
 
 async function getSocials(): Promise<Social[] | null> {
-    const response = await fetch(`${API_URL}/social`, {
+    const response = await fetch(API_URL + '/social', {
         next: { revalidate: 300 },
     });
 

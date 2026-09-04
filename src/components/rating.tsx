@@ -24,21 +24,21 @@ export default function Rating({ rating, max = 5 }: Props): JSX.Element {
 	return (
 		<div
 			className="stars"
-			aria-label={`${safeRating} out of ${max} stars`}
-			title={`${safeRating} / ${max}`}
+			aria-label={safeRating + ' out of ' + max + ' stars'}
+			title={safeRating + ' / ' + max}
 		>
 			<div className="stars-row stars-base">
 				{Array.from({ length: max }).map((_, index) => (
-					<StarIcon key={`base-${index}`} />
+					<StarIcon key={'base-' + index} />
 				))}
 			</div>
 
 			<div
 				className="stars-row stars-fill"
-				style={{ width: `${fillPercentage}%` }}
+				style={{ width: fillPercentage + '%' }}
 			>
 				{Array.from({ length: max }).map((_, index) => (
-					<StarIcon key={`fill-${index}`} />
+					<StarIcon key={'fill-' + index} />
 				))}
 			</div>
 		</div>

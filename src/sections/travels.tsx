@@ -9,7 +9,7 @@ import type { Blog } from '@/types/all';
 import './_scss/travels.scss';
 
 async function getTravels(): Promise<Blog[] | null> {
-    const response = await fetch(`${API_URL}/travels`, {
+    const response = await fetch(API_URL + '/travels', {
         next: { revalidate: 300 },
     });
 

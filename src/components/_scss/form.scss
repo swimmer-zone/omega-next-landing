@@ -38,29 +38,83 @@ fieldset {
     textarea {
         height: 6rem;
     }
-    button {
-        background-color: $yellow;
-        border: 1px solid light-dark($lighter, $darker);
-        font-weight: bold;
-        color: $darker;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-        width: 320px;
-        box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 50%);
-
-        &:hover {
-            box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 87.5%);
-        }
-    }
     .honeypot {
         position: absolute;
         left: -9999px;
         width: 1px;
         height: 1px;
         opacity: 0;
+    }
+}
+
+:is(fieldset, dialog) button{
+    background-color: $yellow;
+    border: 1px solid light-dark($lighter, $darker);
+    font-weight: bold;
+    color: $darker;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 320px;
+    box-shadow: 0 0 20px hsl(from #{$yellow} h s l / 25%);
+
+    &:hover {
+        box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 50%);
+    }
+}
+
+dialog {
+    border: 1px solid $purple;
+    border-radius: 1rem;
+    padding: 0;
+    max-width: 40vw;
+    width: calc(100% - 2rem);
+    background-color: light-dark($lighter, $darker);
+    color: light-dark($dark, $light);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+    }
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2.5rem 2rem;
+        text-align: center;
+
+        h2 {
+            display: flex;
+            gap: 2rem;
+            margin: 0 0 1rem;
+            align-items: center;
+
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                line-height: 3rem;
+                border-radius: 50%;
+                font-size: 2rem;
+                font-weight: 700;
+                color: light-dark($lightest, $darkest);
+            }
+        }
+        p {
+           margin: 0 0 3rem 0;
+        }
+    }
+    &.success {
+        .icon {
+            background-color: $success;
+        }
+    }
+    &.error {
+        .icon {
+            background-color: $error;
+        }
     }
 }
 

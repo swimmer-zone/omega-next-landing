@@ -8,7 +8,7 @@ import type { City, Country } from '@/types/all';
 import './_scss/map.scss';
 
 async function getCities(): Promise<City[] | null> {
-    const response = await fetch(`${API_URL}/cities`, {
+    const response = await fetch(API_URL + '/cities', {
         next: { revalidate: 300 },
     });
 
@@ -24,7 +24,7 @@ async function getCities(): Promise<City[] | null> {
 }
 
 async function getCountries(): Promise<Country[] | null> {
-    const response = await fetch(`${API_URL}/countries`, {
+    const response = await fetch(API_URL + '/countries', {
         next: { revalidate: 300 },
     });
 

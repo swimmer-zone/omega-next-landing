@@ -26,8 +26,7 @@ export default function Nav(): JSX.Element {
         let frame: number | null = null;
 
         const handleScroll = () => {
-            // Don't perform layout calculations for every individual
-            // scroll event.
+            // Don't perform layout calculations for every individual scroll event
             if (frame !== null) {
                 return;
             }
@@ -111,32 +110,20 @@ export default function Nav(): JSX.Element {
             <ul>
                 {sections.map((section) => (
                     <li key={section}>
-                        <a
-                            href={`#${section}`}
-                            className={
-                                activeSection === section
-                                    ? 'is-active'
-                                    : ''
-                            }
-                        >
+                        <a href={'#' + section} className={activeSection === section ? 'is-active' : ''}>
                             <Image
                                 className="menu-image"
-                                src={`vector/menu/${section}.svg`}
+                                src={'vector/menu/' + section + '.svg'}
                                 alt={section}
-                                width={24}
-                                height={24}
+                                width="24"
+                                height="24"
                             />
                         </a>
                     </li>
                 ))}
             </ul>
 
-            <div
-                className="scroll-marker"
-                style={{
-                    top: `${scrollProgress * 100}%`,
-                }}
-            />
+            <div className="scroll-marker" style={{top: (scrollProgress * 100) + '%'}}/>
         </nav>
     );
 }

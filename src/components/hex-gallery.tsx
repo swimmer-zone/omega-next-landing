@@ -18,7 +18,7 @@ export default function HexGallery({ images }: Props) {
                 <Image
                     key={src}
                     src={src}
-                    alt={`Gallery image ${index + 1}`}
+                    alt={'Gallery image ' + (index + 1)}
                     width={216}
                     height={238}
                     className="shade"

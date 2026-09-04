@@ -26,13 +26,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: `Ωmega - ${diy.title}`,
+        title: 'Ωmega - ' + diy.title,
         description: diy.subtitle ?? '',
     };
 }
 
 async function getDIY(id: string): Promise<Blog | null> {
-    const response = await fetch(`${API_URL}/diy/${id}`, {
+    const response = await fetch(API_URL + '/diy/' + id, {
         next: { revalidate: 300 },
     });
 

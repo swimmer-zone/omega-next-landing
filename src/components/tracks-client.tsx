@@ -14,20 +14,14 @@ function formatTime(seconds: number | null): string {
         return '';
     }
 
-    return `${Math.floor(seconds / 60)}:${String(
-        Math.floor(seconds % 60)
-    ).padStart(2, '0')}`;
+    return Math.floor(seconds / 60) + ':' + String(Math.floor(seconds % 60)).padStart(2, '0');
 }
 
 function countDown(
     duration: number | null,
     time: number | null
 ): string {
-    if (
-        time == null ||
-        duration == null ||
-        Number.isNaN(time)
-    ) {
+    if (time == null || duration == null || Number.isNaN(time)) {
         return '';
     }
 
@@ -56,14 +50,14 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
     const playerRef = useRef<AudioPlayer | null>(null);
     const shouldPlayRef = useRef<boolean>(false);
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const currentPlayIdRef = useRef<number | null>(null);
     const lastProgressSentRef = useRef<number>(0);
     const firstTrack = section.tracks?.[0];
 
     const [currentTrack, setCurrentTrack] = useState<string | null>(
-        firstTrack
-            ? `${STORAGE_URL}/${firstTrack.file}`
-            : null
+        firstTrack ? STORAGE_URL + '/' + firstTrack.file : null
     );
     const [currentTime, setCurrentTime] = useState<number | null>(null);
     const [duration, setDuration] = useState<number | null>(null);
@@ -77,8 +71,7 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
         durationSeconds: number | null,
         completed = false
     ) => {
-        fetch(
-            `${process.env.NEXT_PUBLIC_API_URL}/track-plays/${playId}`,
+        fetch(process.env.NEXT_PUBLIC_API_URL + '/track-plays/' + playId,
             {
                 method: 'PATCH',
                 headers: {
@@ -98,8 +91,7 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
         lastProgressSentRef.current = 0;
 
         try {
-            const response = await fetch(
-                `${process.env.NEXT_PUBLIC_API_URL}/tracks/${trackId}/play/start`,
+            const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/tracks/' + trackId + '/play/start',
                 {
                     method: 'POST',
                     headers: {
@@ -131,28 +123,34 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
             return;
         }
 
-        const fileUrl = `${STORAGE_URL}/${track.file}`;
+        const fileUrl = STORAGE_URL + '/' + track.file;
+        const audio = getAudioElement();
 
-        shouldPlayRef.current = true;
-
-        setCurrentTrack(fileUrl);
         setCurrentTrackIndex(index);
         setCurrentTime(null);
         setDuration(null);
+        setIsLoading(true);
 
         startPlaySession(track.id);
+
+        if (currentTrack === fileUrl && audio) {
+            audio.currentTime = 0;
+            audio.play()
+                .then(() => setIsLoading(false))
+                .catch(() => setIsLoading(false));
+            return;
+        }
+
+        shouldPlayRef.current = true;
+        setCurrentTrack(fileUrl);
     };
 
     const handleCanPlay = () => {
-        if (!shouldPlayRef.current) {
-            return;
-        }
+        if (!shouldPlayRef.current) return;
 
         const audio = getAudioElement();
 
-        if (!audio) {
-            return;
-        }
+        if (!audio) return;
 
         shouldPlayRef.current = false;
 
@@ -263,84 +261,55 @@ export default function TracksClient({section, showTitle}: Props): JSX.Element {
 
     return (
         <>
-            <article
-                key={section.id}
-                id={`section_${section.id}`}
-                className={showTitle ? 'album' : 'no-album'}
-            >
-                    {showTitle && (
-                        <h3>{section.title}</h3>
-                    )}
+            <article key={section.id} id={'section_' + section.id} className={showTitle ? 'album' : 'no-album'}>
+                {showTitle && (<h3>{section.title}</h3>)}
 
-                    <ul>
-                        {(section.tracks ?? []).map(
-                            (track, index) => {
-                                const fileUrl =
-                                    `${STORAGE_URL}/${track.file}`;
+                <ul>
+                    {(section.tracks ?? []).map(
+                        (track, index) => {
+                            const fileUrl = STORAGE_URL + '/' + track.file;
+                            const isPlaying = currentTrack === fileUrl && currentTime != null;
 
-                                const isPlaying =
-                                    currentTrack === fileUrl &&
-                                    currentTime != null;
-
-                                return (
-                                    <li key={track.id}>
-                                        <span className="a">
-                                            <button
-                                                type="button"
-                                                onClick={() =>
-                                                    handleTrackClick(index)
-                                                }
-                                                data-permalink={
-                                                    track.slug
-                                                }
-                                                className={
-                                                    isPlaying
-                                                        ? 'track-button playing'
-                                                        : 'track-button'
-                                                }
-                                            >
-                                                {track.title}
-
-                                                {track.remark && (
-                                                    <small className="remark">
-                                                        ({track.remark})
-                                                    </small>
-                                                )}
-                                            </button>
-                                        </span>
-
-                                        <span
-                                            className="duration"
-                                            data-seconds={
-                                                track.duration
-                                            }
+                            return (
+                                <li key={track.id}>
+                                    <span className="a">
+                                        <button
+                                            type="button"
+                                            onClick={() => handleTrackClick(index)}
+                                            data-permalink={track.slug}
+                                            className={[
+                                                'track-button',
+                                                isPlaying && 'playing',
+                                                isLoading && currentTrack === fileUrl && 'loading',
+                                            ].filter(Boolean).join(' ')}
                                         >
-                                            {isPlaying
-                                                ? timeLeft
-                                                : formatTime(
-                                                    track.duration
-                                                )}
-                                        </span>
-                                    </li>
-                                );
-                            }
-                        )}
-                    </ul>
+                                            {track.title}
+
+                                            {track.remark && (<small className="remark">{track.remark}</small>)}
+                                        </button>
+                                    </span>
+
+                                    <span className="duration" data-seconds={track.duration}>
+                                        {isPlaying ? timeLeft : formatTime(track.duration)}
+                                    </span>
+                                </li>
+                            );
+                        }
+                    )}
+                </ul>
                 <AudioPlayer
                     ref={playerRef}
                     src={currentTrack ?? undefined}
                     listenInterval={1000}
                     onListen={handleListen}
                     onCanPlay={handleCanPlay}
+                    onPlay={() => setIsLoading(false)}
                     onClickPrevious={handlePrevious}
                     onClickNext={handleNext}
                     onEnded={handleEnded}
                     showSkipControls
                     showJumpControls={false}
-                    customControlsSection={[
-                        RHAP_UI.MAIN_CONTROLS,
-                        RHAP_UI.VOLUME_CONTROLS,
-                    ]}
+                    customControlsSection={[RHAP_UI.MAIN_CONTROLS, RHAP_UI.VOLUME_CONTROLS]}
                 />
             </article>
         </>

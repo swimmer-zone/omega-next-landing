@@ -10,14 +10,35 @@ export const metadata: Metadata = {
     authors: [{ name: 'Omega' }],
 };
 export const viewport: Viewport = {
-    colorScheme: 'light',
-    themeColor: '#6a6eec',
+    colorScheme: 'light dark',
+    themeColor: '#6c6eec',
     width: 'device-width',
     initialScale: 1,
 };
 
-export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>): JSX.Element {
-    return (<html lang="en">
+const themeScript = `
+(function () {
+    try {
+        const storedTheme = localStorage.getItem('theme');
+
+        if (storedTheme === 'light' || storedTheme === 'dark') {
+            document.documentElement.style.colorScheme = storedTheme;
+        } else {
+            const theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+
+            document.documentElement.style.colorScheme = theme;
+        }
+    } catch (_) {}
+})();
+`;
+
+export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>): JSX.Element {
+    return (<html lang="en" suppressHydrationWarning>
+        <head>
+            <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        </head>
         <body>
             {children}
             <div style={{minHeight: '50px'}}>

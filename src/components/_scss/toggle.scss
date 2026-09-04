@@ -59,4 +59,21 @@
     &:focus-visible {
         outline: none;
     }
+    svg:first-child {
+        opacity: .1;
+    }
+    svg:last-child {
+        opacity: 1;
+    }
+    &.light {
+        svg:first-child {
+            opacity: 1;
+        }
+        svg:last-child {
+            opacity: .3;
+        }
+    }
+    &:hover {
+        opacity: 0.7;
+    }
 }

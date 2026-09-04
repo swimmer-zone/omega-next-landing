@@ -6,7 +6,7 @@ import type { Blog } from '@/types/all';
 const BASE_URL = 'https://ome.gs';
 
 async function getDIY(): Promise<Blog[]> {
-    const response = await fetch(`${API_URL}/diy`, {
+    const response = await fetch(API_URL + '/diy', {
         next: { revalidate: 300 },
     });
 
@@ -18,7 +18,7 @@ async function getDIY(): Promise<Blog[]> {
 }
 
 async function getTravels(): Promise<Blog[]> {
-    const response = await fetch(`${API_URL}/travels`, {
+    const response = await fetch(API_URL + '/travels', {
         next: { revalidate: 300 },
     });
 
@@ -41,21 +41,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: new Date(),
         },
         {
-            url: `${BASE_URL}/music`,
+            url: BASE_URL + '/music',
             lastModified: new Date(),
         },
         {
-            url: `${BASE_URL}/whisky`,
+            url: BASE_URL + '/whisky',
             lastModified: new Date(),
         },
 
         ...diy.map((item) => ({
-            url: `${BASE_URL}/diy/${item.slug}`,
+            url: BASE_URL + '/diy/' + item.slug,
             lastModified: item.updated_at,
         })),
 
         ...travels.map((item) => ({
-            url: `${BASE_URL}/travels/${item.slug}`,
+            url: BASE_URL + '/travels/' + item.slug,
             lastModified: item.updated_at,
         })),
     ];

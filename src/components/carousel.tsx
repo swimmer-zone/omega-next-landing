@@ -36,7 +36,7 @@ export default function Carousel({ images }: Props) {
 				<SwiperSlide key={src}>
 					<Image
 						src={src}
-						alt={`image-${index + 1}`}
+						alt={'image-' + (index + 1)}
 						width={600}
 						height={440}
 						className="shade"

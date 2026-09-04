@@ -76,9 +76,9 @@ export default function BlogClient({ source, galleries }: Props) {
                                 {headings.map((heading) => (
                                     <li
                                         key={heading.id}
-                                        className={`toc-depth-${heading.depth}`}
+                                        className={'toc-depth-' + heading.depth}
                                     >
-                                        <a href={`#${heading.id}`}>
+                                        <a href={'#' + heading.id}>
                                             {heading.text}
                                         </a>
                                     </li>
