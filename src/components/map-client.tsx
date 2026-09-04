@@ -1,6 +1,6 @@
 'use client';
 
-import React, { JSX, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
     Annotation,
@@ -26,11 +26,30 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
     const visitedCountryNames = new Set(
         visitedCountries.map((country) => country.name)
     );
+
     const [hoveredCity, setHoveredCity] = useState<string | null>(null);
+    const [theme, setTheme] = useState<'light' | 'dark'>(
+        () => document.documentElement.style.colorScheme as 'light' | 'dark'
+    );
 
-    const theme = document.documentElement.style.colorScheme;
+    useEffect(() => {
+        const observer = new MutationObserver(() => {
+            setTheme(
+                document.documentElement.style.colorScheme as 'light' | 'dark'
+            );
+        });
 
-    let i: number = 0;
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['style'],
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const isLight = theme === 'light';
+
+    let i = 0;
 
     return (
         <ComposableMap
@@ -39,7 +58,7 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                 scale: 350,
             }}
         >
-            <Graticule stroke={theme === 'light' ? '#eeeeee'  : '#111111'} />
+            <Graticule stroke={isLight ? '#eeeeee' : '#111111'} />
 
             <Geographies geography={countries}>
                 {({ geographies }) => (
@@ -59,16 +78,16 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                                         default: {
                                             fill: highlighted
                                                 ? '#6c6eecaa'
-                                                : theme === 'light' ? '#ddddddaa' : '#222222aa',
-                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
+                                                : isLight ? '#ddddddaa' : '#222222aa',
+                                            stroke: isLight ? '#ffffff' : '#000000',
                                         },
                                         hover: {
                                             fill: '#6c6eec44',
-                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
+                                            stroke: isLight ? '#ffffff' : '#000000',
                                         },
                                         pressed: {
                                             fill: '#6c6eec88',
-                                            stroke: theme === 'light' ? '#ffffff' : '#000000',
+                                            stroke: isLight ? '#ffffff' : '#000000',
                                         },
                                     }}
                                 />
@@ -81,8 +100,15 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
             {visitedCities.map(({ name, latitude, longitude, link }) => {
                 const label = (
                     <text
-                        fill={link ? theme === 'light' ? '#222222' : '#dddddd' : theme === 'light' ? '#444444' : '#bbbbbb'}
-                        style={{ cursor: link ? 'pointer' : 'default', fontSize: '8px' }}
+                        fill={
+                            link
+                                ? isLight ? '#222222' : '#dddddd'
+                                : isLight ? '#444444' : '#bbbbbb'
+                        }
+                        style={{
+                            cursor: link ? 'pointer' : 'default',
+                            fontSize: '8px',
+                        }}
                     >
                         {name}
                     </text>
@@ -101,27 +127,29 @@ export default function MapClient({ visitedCities, visitedCountries }: Props): J
                             <circle r={2} fill="#ffc917" />
                         </Marker>
 
-                        {hoveredCity === name && (<Annotation
-                            subject={[
-                                longitude as Longitude,
-                                latitude as Latitude,
-                            ]}
-                            dx={2}
-                            dy={2}
-                            connectorProps={{
-                                stroke: '#888888',
-                                strokeWidth: 1,
-                                strokeLinecap: 'round',
-                            }}
-                        >
-                            {link ? (
-                                <Link href={'/travels/' + link}>
-                                    {label}
-                                </Link>
-                            ) : (
-                                label
-                            )}
-                        </Annotation>)}
+                        {hoveredCity === name && (
+                            <Annotation
+                                subject={[
+                                    longitude as Longitude,
+                                    latitude as Latitude,
+                                ]}
+                                dx={2}
+                                dy={2}
+                                connectorProps={{
+                                    stroke: '#888888',
+                                    strokeWidth: 1,
+                                    strokeLinecap: 'round',
+                                }}
+                            >
+                                {link ? (
+                                    <Link href={'/travels/' + link}>
+                                        {label}
+                                    </Link>
+                                ) : (
+                                    label
+                                )}
+                            </Annotation>
+                        )}
                     </React.Fragment>
                 );
             })}

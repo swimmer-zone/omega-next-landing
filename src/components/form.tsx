@@ -9,6 +9,7 @@ import './_scss/form.scss';
 export default function Form(): JSX.Element {
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
     const dialogRef = useRef<HTMLDialogElement>(null);
+    const firstInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (status === 'success' || status === 'error') {
@@ -16,9 +17,13 @@ export default function Form(): JSX.Element {
         }
     }, [status]);
 
-    function closeDialog(): void {
+    function closeDialog(focusForm = false): void {
         dialogRef.current?.close();
         setStatus('idle');
+
+        if (focusForm) {
+            firstInputRef.current?.focus();
+        }
     }
 
     async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
@@ -60,24 +65,29 @@ export default function Form(): JSX.Element {
     return (<>
         <form onSubmit={handleSubmit}>
             <fieldset disabled={status === 'sending'}>
-                <input type="text" name="name" placeholder="Name" required/>
+                <input ref={firstInputRef} type="text" name="name" placeholder="Name" required/>
                 <input type="email" name="email" placeholder="Email" required/>
                 <textarea name="message" placeholder="Message" required/>
                 <input type="text" name="website" tabIndex={-1} autoComplete="off" className="honeypot"/>
-                <button type="submit">
-                    {status === 'sending' ? 'Sending…' : 'Send'}
-                </button>
+                <button type="submit">{status === 'sending' ? 'Sending…' : 'Send'}</button>
             </fieldset>
         </form>
 
-        <dialog ref={dialogRef} className={(isSuccess ? 'success' : 'error')} onCancel={closeDialog}>
-            <div>
+        <dialog
+            ref={dialogRef}
+            className={'form-dialog ' + (isSuccess ? 'success' : 'error')}
+            onCancel={() => closeDialog(isSuccess === false)}
+        >
+            <div className="form-dialog__content">
+                <span className="form-dialog__icon" aria-hidden="true">
+                    {isSuccess ? '✓' : '!'}
+                </span>
                 <h2>
                     <span className="icon" aria-hidden="true">{isSuccess ? '✓' : '!'}</span>
                     {isSuccess ? 'Thanks!' : 'Something went wrong'}
                 </h2>
                 <p>{isSuccess ? 'Your message has been sent.' : 'Please try again.'}</p>
-                <button onClick={closeDialog}>{isSuccess ? 'Close' : 'Try again'}</button>
+                <button onClick={() => closeDialog(!isSuccess)}>{isSuccess ? 'Close' : 'Try again'}</button>
             </div>
         </dialog>
     </>);
