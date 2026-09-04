@@ -33,7 +33,7 @@ nav:not(.toc) {
             display: none;
         }
         a {
-            $border: 2px;
+            $border: 4px;
             position: relative;
             width: 64px;
             aspect-ratio: 1/cos(30deg);
@@ -44,6 +44,10 @@ nav:not(.toc) {
             align-items: center;
             text-decoration: none;
             isolation: isolate;
+
+            &:hover {
+                scale: 2;
+            }
 
             svg,
             .menu-image {

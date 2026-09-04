@@ -2,7 +2,6 @@
 
 header {
     position: relative;
-    background: none !important;
     display: flex;
     flex-direction: column;
 
@@ -15,31 +14,26 @@ header {
     }
     .logo {
         width: 1400px;
+        max-width: 90%;
         height: 500px;
         z-index: 1;
-        max-width: 80vw;
+    }
+    p {
+        width: 1400px;
+        max-width: 90%;
+        z-index: 1;
+        font-size: 1.5rem;
+        text-align: center;
+
+        a {
+            font-size: 1.5rem;
+        }
     }
     .chevron {
         position: absolute;
         bottom: 0;
         left: 50%;
         margin-left: -64px;
-    }
-    p {
-        left: calc(50vw - 170px);
-        top: 580px;
-        width: 880px;
-        max-width: 90%;
-        z-index: 1;
-        font-size: 1.8rem;
-
-        @media(min-width: 1700px) {
-            position: absolute;
-        }
-
-        a {
-            font-size: 1.8rem;
-        }
     }
 }
 
@@ -57,7 +51,6 @@ header {
             display: none;
         }
         .logo {
-            width: 90%;
             height: auto;
             z-index: unset;
             margin: 4rem 1rem 0 1rem;
@@ -67,8 +60,7 @@ header {
             display: none;
         }
         p {
-            width: 90%;
-            z-index: unset;
+            text-align: left;
             font-size: 1.2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid light-dark($darker, $lighter);

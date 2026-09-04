@@ -25,7 +25,6 @@ footer {
         & > * {
             align-self: flex-start;
         }
-
         .social {
             display: flex;
             flex-direction: column;
@@ -120,13 +119,13 @@ footer {
                 input,
                 textarea,
                 button {
-                    width: 100% !important;
+                    width: 100%;
                     margin-inline: 0;
                     box-sizing: border-box;
                     margin-top: 0;
                 }
                 button {
-                    width: 60% !important;
+                    width: 60%;
                 }
             }
             .social {

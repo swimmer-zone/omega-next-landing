@@ -1,168 +1,273 @@
 @use '../../app/_scss/variables' as *;
 
-li:has(.playing) {
-    background-color: light-dark($lightest, $darkest);
-    border: 1px solid light-dark($lighter, $darker);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+article.album,
+article.no-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem;
+    width: 50vw;
+    border: none;
 
-.rhap_container {
-    width: 480px;
-    padding: 1rem 1.25rem;
-    background: light-dark(
-        hsl(from #{$lightest} h s l / 50%),
-        hsl(from #{$darkest} h s l / 50%)
-    );
-    color: $purple;
-    box-shadow: none;
-    border: 1px solid light-dark($lightest, $darkest);
-    border-radius: 0;
-    font-family: inherit;
-    outline: none !important;
+    &.album {
+        background-color: light-dark($lighter, $darker);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    h3 {
+        margin-bottom: 0;
+    }
+    li {
+        display: grid;
+        grid-template-columns: 100px auto 80px;
+        width: 50vw;
+        text-indent: 10px;
+        font-size: 1.2rem;
+        line-height: 2rem;
+        color: $purple;
+        list-style: none;
+        margin-left: -80px;
 
-    .rhap_main {
-        width: 100%;
+        button {
+            display: inline-block;
+            font-size: 1.2rem;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            text-align: left;
+            background: none;
+            pointer-events: all;
+            text-decoration: underline;
+            text-decoration-color: hsl(from #{$yellow} h s l / 75%);
+            text-underline-offset: 4px;
+            text-decoration-style: dotted;
 
-        .rhap_progress-section {
-            margin-bottom: 0.75rem;
-
-            .rhap_time {
-                color: $code;
-                font-size: 0.75rem;
-                font-variant-numeric: tabular-nums;
-            }
-            .rhap_progress-container {
-                height: 1rem;
-                margin-inline: 0;
-
-                .rhap_progress-bar {
-                    height: 2px;
-                    border-radius: 0;
-                    background: light-dark($light, $dark);
-
-                    .rhap_progress-filled {
-                        background: light-dark($black, $white);
-                        border-radius: 0;
-                    }
-                    .rhap_progress-bar-show-download {
-                        background: light-dark($light, $dark);
-                    }
-                    .rhap_download-progress {
-                        background: light-dark($light, $dark);
-                    }
-                    .rhap_progress-indicator {
-                        width: 16px;
-                        height: 16px;
-                        background: $purple;
-                        border-radius: 50%;
-                        box-shadow: none;
-                    }
-                }
-            }
-            .rhap_current-time,
-            .rhap_total-time {
-                display: none;
+            small {
+                opacity: 0.8;
+                font-size: 0.7em;
+                font-style: italic;
+                display: inline-block;
+                margin-left: 12px;
             }
         }
-        .rhap_controls-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-
-            .rhap_main-controls {
-                display: flex;
-                align-items: center;
-                gap: 0.25rem;
-            }
-            .rhap_button-clear {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 2rem;
-                height: 2rem;
-                padding: 0;
-            }
-            .rhap_button-clear:hover {
-                color: $purple;
-            }
-            .rhap_button-clear:focus-visible {
-                outline: 1px solid light-dark($black, $white);
-                outline-offset: 3px;
-            }
-            .rhap_skip-button,
-            .rhap_skip-button svg,
-            .rhap_play-pause-button,
-            .rhap_play-pause-button svg,
-            .rhap_volume-button {
-                width: 1rem;
-                height: 1rem;
-                outline: none !important;
-
-                &:focus-visible svg path {
-                  fill: $purple;
-                }
-            }
-            .rhap_play-pause-button,
-            .rhap_play-pause-button svg {
-                width: 2rem;
-                height: 2rem;
-            }
-            .rhap_volume-controls {
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-                margin-right: 0.5rem;
-            }
-            .rhap_volume-bar-area {
-                width: 5rem;
-            }
-            .rhap_volume-bar {
-                height: 2px;
-                background: light-dark($light, $dark);
-            }
-            .rhap_volume-indicator {
-                width: 16px;
-                height: 16px;
-                background: $purple;
-                margin-top: -2px;
-            }
+        .duration {
+            font-size: 1.2rem;
+            padding-right: 2ch;
+            color: $purple;
+            justify-self: end;
+        }
+        &:before {
+            display: inline-block;
+            text-align: right;
+            margin-right: 0;
+            content: "♬";
+        }
+        &:has(.playing) {
+            border: 1px solid hsl(from #{$purple} h s l / 25%);
+            background-color: light-dark($lightest, $darkest);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        &:has(.loading) {
+            animation: track-loading 1.2s ease-in-out infinite;
         }
     }
-}
-
-
-@media(max-width: $mobile-breakpoint) {
     .rhap_container {
-        width: 100%;
-        margin-bottom: 2rem;
-        background-color: light-dark($lighter, $darker);
-        padding: 0.75rem 1.5rem;
+        width: 480px;
+        padding: 1rem 1.25rem;
+        background: light-dark(
+            hsl(from #{$lightest} h s l / 50%),
+            hsl(from #{$darkest} h s l / 50%)
+        );
+        color: $purple;
+        box-shadow: none;
+        border: 1px solid light-dark($lightest, $darkest);
+        border-radius: 0;
+        font-family: inherit;
+        outline: none !important;
 
         .rhap_main {
-            .rhap_progress-section .rhap_progress-container .rhap_progress-bar {
-                .rhap_download-progress {
-                    margin-top: -11px;
+            width: 100%;
+
+            .rhap_progress-section {
+                .rhap_time {
+                    color: $code;
+                    font-size: 0.75rem;
+                    font-variant-numeric: tabular-nums;
                 }
-                .rhap_progress-indicator {
-                    margin-top: -7px;
+                .rhap_progress-container {
+                    height: 1rem;
+                    margin-inline: 0;
+
+                    .rhap_progress-bar {
+                        height: 8px;
+                        border-radius: 0;
+                        background: light-dark($light, $dark);
+
+                        .rhap_progress-filled {
+                            background: light-dark($black, $white);
+                            border-radius: 0;
+                        }
+                        .rhap_progress-bar-show-download {
+                            background: light-dark($light, $dark);
+                        }
+                        .rhap_download-progress {
+                            background: light-dark($light, $dark);
+                        }
+                        .rhap_progress-indicator {
+                            width: 16px;
+                            height: 16px;
+                            background: $purple;
+                            border-radius: 50%;
+                            box-shadow: none;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+                .rhap_current-time,
+                .rhap_total-time {
+                    display: none;
                 }
             }
             .rhap_controls-section {
-                justify-content: center;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
 
+                .rhap_main-controls {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
+                }
+                .rhap_button-clear {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2rem;
+                    height: 2rem;
+                    padding: 0;
+                }
+                .rhap_button-clear:hover {
+                    color: $purple;
+                }
+                .rhap_button-clear:focus-visible {
+                    outline: 1px solid light-dark($black, $white);
+                    outline-offset: 3px;
+                }
                 .rhap_skip-button,
                 .rhap_skip-button svg,
                 .rhap_play-pause-button,
                 .rhap_play-pause-button svg,
                 .rhap_volume-button {
-                    width: 1.2rem;
-                    height: 1.2rem;
+                    width: 1rem;
+                    height: 1rem;
+                    outline: none !important;
+
+                    &:focus-visible svg path {
+                        fill: $purple;
+                    }
+                }
+                .rhap_play-pause-button,
+                .rhap_play-pause-button svg {
+                    width: 2rem;
+                    height: 2rem;
                 }
                 .rhap_volume-controls {
-                    display: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    margin-right: 0.5rem;
+                }
+                .rhap_volume-bar-area {
+                    width: 5rem;
+                }
+                .rhap_volume-bar {
+                    height: 2px;
+                    background: light-dark($light, $dark);
+                }
+                .rhap_volume-indicator {
+                    width: 16px;
+                    height: 16px;
+                    background: $purple;
+                    margin-top: -2px;
                 }
             }
+        }
+    }
+}
+
+@keyframes track-loading {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+
+@media(max-width: $mobile-breakpoint) {
+    article:is(.album, .no-album) {
+        margin-bottom: 1rem;
+        padding-bottom: 0;
+        width: 90%;
+        margin-left: 0 !important;
+
+        ul {
+            width: 100%;
+
+            li {
+                margin-left: -80px;
+                width: calc(100% + 70px);
+            }
+        }
+        .rhap_container {
+            width: 100%;
+            margin-bottom: 0;
+            background: linear-gradient(to bottom, light-dark($lightest, $darkest), light-dark($lighter, $darker));
+            padding: 0.75rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 2px 2px 20px 2px rgba(0, 0, 0, 0.2), 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+
+            .rhap_main {
+                .rhap_progress-section .rhap_progress-container .rhap_progress-bar {
+                    .rhap_download-progress {
+                        margin-top: -11px;
+                    }
+                    .rhap_progress-indicator {
+                        margin-top: -4px;
+                    }
+                }
+                .rhap_controls-section {
+                    justify-content: center;
+
+                    .rhap_skip-button,
+                    .rhap_skip-button svg,
+                    .rhap_play-pause-button,
+                    .rhap_play-pause-button svg,
+                    .rhap_volume-button {
+                        width: 1.2rem;
+                        height: 1.2rem;
+                    }
+                    .rhap_volume-controls {
+                        display: none;
+                    }
+                }
+            }
+        }
+        &.album {
+            background-color: light-dark($lighter, $darker);
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        &.no-album {
+            border-bottom: 1px solid light-dark($darker, $lighter);
+            margin-inline: 0;
+            padding-bottom: 2rem;
         }
     }
 }

@@ -7,7 +7,6 @@
         "title svg"
         "specs svg";
     grid-template-columns: 1fr max-content;
-
     padding: 0;
     margin: 10px 10px 60px;
     background-color: light-dark($lightest, $darkest);
@@ -16,7 +15,6 @@
     &:first-of-type {
         margin-top: 64px;
     }
-
     .whisky-header {
         grid-area: title;
         padding: 0 20px;
@@ -72,7 +70,7 @@
         }
     }
     legend {
-        background-color: transparent !important;
+        background-color: transparent;
     }
 }
 
