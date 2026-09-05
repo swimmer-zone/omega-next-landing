@@ -46,7 +46,6 @@ fieldset {
         opacity: 0;
     }
 }
-
 :is(fieldset, dialog) button{
     background-color: $yellow;
     border: 1px solid light-dark($lighter, $darker);
@@ -65,7 +64,6 @@ fieldset {
         box-shadow: 0 0 30px hsl(from #{$yellow} h s l / 50%);
     }
 }
-
 dialog {
     border: 1px solid $purple;
     border-radius: 1rem;

@@ -18,18 +18,6 @@
 		height: 200px;
 	}
 }
-
-@keyframes dive {
-	0% {
-		transform: rotate(5deg);
-	}
-	50% {
-		transform: rotate(-5deg);
-	}
-	100% {
-		transform: rotate(5deg);
-	}
-}
 #waves {
     position: fixed;
     bottom: 0;
@@ -135,6 +123,17 @@
 	}
 }
 
+@keyframes dive {
+	0% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(5deg);
+	}
+}
 @keyframes floating {
 	0% {
 		bottom: -100px;
